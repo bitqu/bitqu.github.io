@@ -24,7 +24,7 @@ The recruitment team at BitQubic is looking for a Backend Software Developer wor
 - The candidate must have a bachelor's degree or above in computer science or relevant major. The candidate should have at least 2 years of software development experience.
 - Familiar with Java, or familiar with at least one coding language and has strong interest in learning new technologies.
 - Self-motivated and proactively looking to solve problems.
-- Be curious to learne. Be able to do research spec independently or with minor supervization.
+- Be curious to learn. Be able to do research spec independently or with minor supervision.
 - Good understanding on OOD/OOP and design patterns. Candidate should have some working knowledge on data structure and algorithm.
 - Familiar with REST API and JSON-RPC. Know the common practice of API development.
 - Experience on Relational database such as MySQL and PostgreSQL. Candidate should also have some experiences on db optimization. 
