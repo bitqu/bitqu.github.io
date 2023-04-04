@@ -15,7 +15,7 @@ The team of BitQubic consists of experienced researchers and engineers, as well 
 ## Contact US
 
 BitQubic Corp. <br />
-78 George St, Suite 204 <br />
-Ottawa, ON K1N 0A8 <br />
+390 March Road, Suite 128 <br />
+Kanata, ON K2K 0G7 <br />
 Email: info@bitqubic.com <br />
 
