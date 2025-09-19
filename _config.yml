@@ -2,4 +2,11 @@ title: Bitqu
 description: Personal site powered by Jekyll Serif
 url: https://bitqu.github.io
 baseurl: ""
-plugins:
+plugins: []
+
+# --- added to enable theme collections ---
+collections:
+  team:
+    output: true
+  services:
+    output: true
