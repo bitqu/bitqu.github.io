@@ -1,0 +1,7 @@
+title: Bitqu
+description: Personal site powered by Jekyll Serif
+url: https://bitqu.github.io
+baseurl: ""
+plugins:
+  - jekyll-remote-theme
+remote_theme: Marvelrex/jekyll-serif-theme@sectionTest
