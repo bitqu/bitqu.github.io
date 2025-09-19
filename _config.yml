@@ -4,4 +4,4 @@ url: https://bitqu.github.io
 baseurl: ""
 plugins:
   - jekyll-remote-theme
-remote_theme: Marvelrex/jekyll-serif-theme@sectionTest
+remote_theme: Marvelrex/jekyll-serif-theme@sectiontest
