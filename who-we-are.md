@@ -3,6 +3,7 @@ title: Who We Are
 layout: page
 description: Placeholder description for Who We Are section.
 bodyClass: page-who-we-are
+permalink: "/who-we-are/"
 ---
 
 # Who We Are
