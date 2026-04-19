@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carbon orchestration — BitQubic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css?v=3" />
+<script>const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"lime","hero":"swarm"}/*EDITMODE-END*/;</script>
+</head>
+<body>
+<div id="nav-mount"></div>
+
+<section class="section" style="border-top:0; padding: 72px 0 48px;">
+  <div class="wrap">
+    <div class="tag" style="margin-bottom: 24px;">Product · Carbon-aware orchestration</div>
+    <h1 style="font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.025em; line-height:1.04; margin: 0 0 24px; font-weight: 500; max-width: 22ch;">Schedule against the grid, not the clock.</h1>
+    <p style="color: var(--fg-dim); font-size: 18px; max-width: 62ch; line-height: 1.5; margin: 0 0 40px;">A Kubernetes-native scheduler that reads live marginal grid intensity and moves workloads to where electrons are cleanest — without breaking your SLAs. Accounting included.</p>
+  </div>
+</section>
+
+<section class="section" style="padding: 48px 0;">
+  <div class="wrap">
+    <div style="border:1px solid var(--line); background: var(--surface); padding: 32px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px;">
+        <div class="tag">24-hour grid intensity · four regions (gCO₂e / kWh)</div>
+        <div style="display:flex; gap:16px; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.05em;">
+          <span><span class="dot" style="background:var(--accent)"></span>clean</span>
+          <span><span class="dot" style="background:var(--fg-dim)"></span>avg</span>
+          <span><span class="dot" style="background:var(--warn)"></span>peak</span>
+        </div>
+      </div>
+      <div id="bars" style="display:flex; gap: 8px; height: 220px; align-items:flex-end;"></div>
+      <div style="display:flex; justify-content:space-between; margin-top: 14px; font-family:var(--mono); font-size:10px; color:var(--muted); text-transform:uppercase;">
+        <span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span>
+      </div>
+    </div>
+    <div class="metrics" style="margin-top: 1px;">
+      <div class="metric"><div class="metric-num">−38%</div><div class="metric-lbl">Operational emissions, median customer</div></div>
+      <div class="metric"><div class="metric-num">0</div><div class="metric-lbl">SLA violations attributable to scheduler, 2025</div></div>
+      <div class="metric"><div class="metric-num">4</div><div class="metric-lbl">Grid-intensity providers integrated</div></div>
+      <div class="metric"><div class="metric-num">K8s</div><div class="metric-lbl">Native operator · no sidecar required</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">01 · How it works</div>
+      <div>
+        <h2 class="section-title">Every workload has a shape. The scheduler finds the cleanest hour that still fits it.</h2>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; border:1px solid var(--line);">
+      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag" style="color:var(--accent)">01 · Classify</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Is it deferrable?</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Tag workloads by urgency, deadline, and locality constraints. Interactive ≠ batch.</p></div>
+      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag">02 · Forecast</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Read the grid</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Pull marginal intensity forecasts from Electricity Maps, WattTime, and on-prem telemetry.</p></div>
+      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag">03 · Decide</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Place, defer, or migrate</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Solve a cost-constrained MILP over (region × hour). SLA as a hard constraint.</p></div>
+      <div style="padding: 28px;"><div class="tag">04 · Account</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Sign the ledger</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Emissions per run written to an auditable ledger. GHG Protocol scope 2 ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="display:grid; grid-template-columns: 1fr auto; gap:40px; align-items:center; padding: 40px 0;">
+    <h2 style="font-size: clamp(28px, 3vw, 40px); line-height:1.1; margin:0; font-weight:500; letter-spacing:-0.02em;">See your cluster's carbon profile.</h2>
+    <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
+  </div>
+</section>
+
+<div id="foot-mount"></div>
+<div id="tweaks-mount"></div>
+<script src="assets/shared.js?v=4"></script>
+<script>
+  window.addEventListener('load', () => {
+    const regions = [
+      { name: 'eu-north-1', color: 'var(--accent)', vals: [42,38,36,34,32,30,34,40,48,56,62,58,52,48,44,42,46,52,58,64,58,50,44,40] },
+      { name: 'us-west-2',  color: 'var(--fg-dim)', vals: [280,290,310,330,350,370,390,410,430,440,430,410,390,380,400,420,440,460,450,420,380,340,310,290] },
+      { name: 'ap-east-1',  color: 'var(--warn)', vals: [520,540,560,580,610,640,680,720,760,790,820,830,820,800,780,760,740,700,660,620,580,560,540,530] },
+      { name: 'ca-central-1',color:'var(--accent)', vals: [22,20,18,18,20,22,26,32,40,48,56,52,44,40,36,34,38,46,52,58,48,38,30,26] },
+    ];
+    const mount = document.getElementById('bars');
+    mount.innerHTML = '';
+    // 24 columns, each with 4 bars
+    for (let h = 0; h < 24; h++) {
+      const col = document.createElement('div');
+      col.style.flex = '1';
+      col.style.display = 'flex';
+      col.style.gap = '2px';
+      col.style.alignItems = 'flex-end';
+      col.style.height = '100%';
+      regions.forEach(r => {
+        const v = r.vals[h];
+        const pct = Math.min(100, (v / 900) * 100);
+        const b = document.createElement('div');
+        b.style.flex = '1';
+        b.style.height = pct + '%';
+        b.style.background = r.color;
+        b.style.opacity = v > 700 ? '1' : (v < 100 ? '0.95' : '0.75');
+        col.appendChild(b);
+      });
+      mount.appendChild(col);
+    }
+  });
+</script>
+</body>
+</html>
