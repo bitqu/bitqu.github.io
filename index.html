@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BitQubic — Distributed intelligence infrastructure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css?v=4" />
+<script>
+  // Persist tweakable defaults for host to rewrite
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "theme": "dark",
+    "accent": "lime",
+    "hero": "swarm"
+  }/*EDITMODE-END*/;
+</script>
+</head>
+<body data-has-hero="true">
+<div id="nav-mount"></div>
+
+<!-- HERO: swarm variant -->
+<header class="hero" data-variant="swarm">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Infrastructure for <em>distributed</em> intelligence.</h1>
+      <p class="lead">BitQubic builds the substrate for federated learning, carbon-aware orchestration, and large-scale agentic simulation, deployed inside regulated institutions that cannot move their data and cannot pause their compute.</p>
+      <div style="display:flex; gap:12px; margin-bottom:40px;">
+        <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
+        <a href="platform.html" class="btn">Read the platform brief</a>
+      </div>
+      <div class="hero-meta">
+        <span><span class="dot" style="background:var(--ok)"></span>Live · 412 nodes</span>
+        <span>18 regions</span>
+        <span>v3.2.0-lts</span>
+      </div>
+    </div>
+    <div>
+      <div class="sim-frame">
+        <div class="sim-head">
+          <div class="tabs" id="hero-tabs">
+            <span class="tab on" data-view="agents" role="button" tabindex="0">agentic_sim.live</span>
+            <span class="tab" data-view="federated" role="button" tabindex="0">federated.net</span>
+            <span class="tab" data-view="carbon" role="button" tabindex="0">carbon.grid</span>
+          </div>
+          <span id="hero-run-label">run #81,402</span>
+        </div>
+        <div class="sim-body">
+          <canvas id="hero-canvas"></canvas>
+          <div id="hero-federated" style="position:absolute; inset:0; display:none; padding:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+              <div class="tag" style="color:var(--accent)">Round 1,412 · 6 participants</div>
+              <div class="tag">ε 2.4 / 8.0</div>
+            </div>
+            <svg viewBox="0 0 520 280" width="100%" height="calc(100% - 30px)" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <marker id="fa" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--fg-dim)"/></marker>
+              </defs>
+              <g fill="none" stroke="var(--line-2)">
+                <rect x="220" y="120" width="80" height="40" fill="var(--bg)" stroke="var(--accent)"/>
+              </g>
+              <text x="260" y="138" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono" font-size="10" letter-spacing="0.05em">AGG</text>
+              <text x="260" y="152" text-anchor="middle" fill="var(--fg-dim)" font-family="JetBrains Mono" font-size="9">secure·DP</text>
+              <g fill="none" stroke="var(--line-2)">
+                <rect x="30" y="30" width="130" height="36" fill="var(--bg)"/>
+                <rect x="30" y="122" width="130" height="36" fill="var(--bg)"/>
+                <rect x="30" y="214" width="130" height="36" fill="var(--bg)"/>
+                <rect x="360" y="30" width="130" height="36" fill="var(--bg)"/>
+                <rect x="360" y="122" width="130" height="36" fill="var(--bg)"/>
+                <rect x="360" y="214" width="130" height="36" fill="var(--bg)"/>
+              </g>
+              <g font-family="Inter Tight" font-size="11" fill="var(--fg)">
+                <text x="40" y="52">Participant A</text>
+                <text x="40" y="144">Participant B</text>
+                <text x="40" y="236">Participant F</text>
+                <text x="370" y="52">Participant D</text>
+                <text x="370" y="144">Participant E</text>
+                <text x="370" y="236">Participant G</text>
+              </g>
+              <g stroke="var(--line-2)" fill="none" stroke-dasharray="3 4">
+                <line x1="160" y1="48" x2="220" y2="132" marker-end="url(#fa)"/>
+                <line x1="160" y1="140" x2="220" y2="140" marker-end="url(#fa)"/>
+                <line x1="160" y1="232" x2="220" y2="148" marker-end="url(#fa)"/>
+                <line x1="360" y1="48" x2="300" y2="132" marker-end="url(#fa)"/>
+                <line x1="360" y1="140" x2="300" y2="140" marker-end="url(#fa)"/>
+                <line x1="360" y1="232" x2="300" y2="148" marker-end="url(#fa)"/>
+              </g>
+            </svg>
+          </div>
+          <div id="hero-carbon" style="position:absolute; inset:0; display:none; padding:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+              <div class="tag" style="color:var(--accent)">Grid intensity · 24h · gCO₂e/kWh</div>
+              <div class="tag">4 regions</div>
+            </div>
+            <div id="hero-bars" style="display:flex; gap:4px; height:calc(100% - 60px); align-items:flex-end;"></div>
+            <div style="display:flex; justify-content:space-between; margin-top:8px; font-family:var(--mono); font-size:10px; color:var(--muted); text-transform:uppercase;"><span>00:00</span><span>12:00</span><span>24:00</span></div>
+          </div>
+        </div>
+        <div class="sim-head" style="border-top:1px solid var(--line); border-bottom:0;">
+          <span id="hero-foot-a">12,000 agents · 4 cohorts</span>
+          <span><span class="dot" style="background:var(--ok)"></span>stable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO: editorial variant (hidden by default) -->
+<header class="hero" data-variant="editorial" style="display:none; padding: 96px 0 96px;">
+  <div class="wrap">
+    <div class="tag" style="margin-bottom:48px">ESTABLISHED 2022 · PALO ALTO / ZÜRICH</div>
+    <h1 style="max-width: 18ch; margin-bottom: 40px;">Intelligence, <em>federated</em>. Compute, accountable. Simulation, at scale.</h1>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items:end; border-top:1px solid var(--line); padding-top: 40px;">
+      <p class="lead" style="max-width: 56ch; font-size: 18px;">BitQubic is the distributed intelligence layer trusted by central banks, hospital networks, and the defense primes who can't afford to abstract over their infrastructure. We ship three products; they compose into one platform.</p>
+      <div style="display:flex; gap:12px; justify-content:flex-end;">
+        <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
+        <a href="platform.html" class="btn">Platform brief</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- LOGO TICKER -->
+<div id="ticker-mount"></div>
+
+<!-- THREE PRODUCTS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">01 · Products</div>
+      <div>
+        <h2 class="section-title">Three products. One substrate. Deployed together or alone.</h2>
+        <p class="section-sub">Each product is independently usable. Together they form a coherent platform for institutions running intelligence across jurisdictions, hardware fleets, and regulatory boundaries.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-3">
+      <!-- Agentic sims -->
+      <a href="simulations.html" class="cell" style="display:block; text-decoration:none;">
+        <div class="tag" style="color:var(--accent)">Pillar · Agentic simulations</div>
+        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Rehearse futures before they cost you anything.</h3>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Run 10⁴–10⁶ agent populations against stochastic environments. Deterministic replay, counterfactual branches, causal attribution.</p>
+        <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); position:relative;">
+          <canvas id="card-sim-1" style="position:absolute; inset:0;"></canvas>
+        </div>
+      </a>
+
+      <!-- Federated -->
+      <a href="federated.html" class="cell" style="display:block; text-decoration:none;">
+        <div class="tag">Product · Federated learning</div>
+        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Train without moving the data.</h3>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Secure aggregation, differential privacy budgets, and async tolerance for sites that go offline. Cross-silo and cross-device, one API.</p>
+        <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); padding: 20px;">
+          <svg viewBox="0 0 400 120" width="100%" height="100%" style="overflow:visible;">
+            <g fill="none" stroke="var(--line-2)" stroke-width="1">
+              <circle cx="200" cy="60" r="12" fill="var(--accent)" stroke="none" />
+              <g id="nodes">
+                <circle cx="60" cy="30" r="5" fill="var(--fg-dim)" stroke="none"/>
+                <circle cx="60" cy="90" r="5" fill="var(--fg-dim)" stroke="none"/>
+                <circle cx="140" cy="20" r="5" fill="var(--fg-dim)" stroke="none"/>
+                <circle cx="140" cy="100" r="5" fill="var(--fg-dim)" stroke="none"/>
+                <circle cx="260" cy="20" r="5" fill="var(--fg-dim)" stroke="none"/>
+                <circle cx="260" cy="100" r="5" fill="var(--fg-dim)" stroke="none"/>
+                <circle cx="340" cy="30" r="5" fill="var(--fg-dim)" stroke="none"/>
+                <circle cx="340" cy="90" r="5" fill="var(--fg-dim)" stroke="none"/>
+              </g>
+              <line x1="60" y1="30" x2="200" y2="60"/>
+              <line x1="60" y1="90" x2="200" y2="60"/>
+              <line x1="140" y1="20" x2="200" y2="60"/>
+              <line x1="140" y1="100" x2="200" y2="60"/>
+              <line x1="260" y1="20" x2="200" y2="60"/>
+              <line x1="260" y1="100" x2="200" y2="60"/>
+              <line x1="340" y1="30" x2="200" y2="60"/>
+              <line x1="340" y1="90" x2="200" y2="60"/>
+            </g>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Carbon -->
+      <a href="orchestration.html" class="cell" style="display:block; text-decoration:none;">
+        <div class="tag">Product · Carbon orchestration</div>
+        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Schedule against the grid, not the clock.</h3>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Kubernetes-native scheduler that reads marginal grid intensity and reshapes workloads in flight. SLA preserved, emissions priced.</p>
+        <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); padding: 16px 20px; display:flex; align-items:flex-end; gap: 4px;">
+          <!-- mini bar chart -->
+          <script>/* bars rendered by inline JS at bottom */</script>
+          <div id="bars-preview" style="display:flex; align-items:flex-end; gap: 3px; height: 100%; width: 100%;"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="section" style="padding: 0;">
+  <div class="wrap">
+    <div class="metrics">
+      <div class="metric"><div class="metric-num">412</div><div class="metric-lbl">Active federation nodes</div></div>
+      <div class="metric"><div class="metric-num">18.4<span style="color:var(--muted); font-size: 18px;">M tCO₂e</span></div><div class="metric-lbl">Deferred via carbon-aware routing</div></div>
+      <div class="metric"><div class="metric-num">1.2B</div><div class="metric-lbl">Agent-steps simulated / wk</div></div>
+      <div class="metric"><div class="metric-num">99.98%</div><div class="metric-lbl">Aggregation round SLO, 2025</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD: AGENTIC SIMS (priority pillar) -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">02 · Lead product</div>
+      <div>
+        <h2 class="section-title">Agentic simulation is the decision layer we built the company around.</h2>
+        <p class="section-sub">Every regulatory body, central bank, and frontier research team we work with has the same question: what happens when this policy, this drug, this market mechanism, or this deployment strategy meets the real world? We help them ask it safely — a million times — before it goes live.</p>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 1.15fr 1fr; gap: 0; border: 1px solid var(--line);">
+      <div style="padding: 40px; border-right: 1px solid var(--line);">
+        <div class="tag" style="margin-bottom: 20px;">Scenario · macroprudential stress, run #81,402</div>
+        <div style="font-family: var(--mono); font-size: 13px; line-height:1.7; color: var(--fg-dim);">
+          <div><span style="color:var(--accent)">▸</span> Initialize 12,000 heterogeneous agents across 4 cohorts</div>
+          <div><span style="color:var(--accent)">▸</span> Seed with Basel-IV stressed balance sheets (Q1 '26 snapshot)</div>
+          <div><span style="color:var(--accent)">▸</span> Run 90-day horizon · 400 parallel counterfactual branches</div>
+          <div style="color:var(--muted); margin-top:12px;">— stepping —</div>
+          <div style="margin-top:4px;">t+14d  · liquidity pressure detected in cohort 3 (22 agents)</div>
+          <div>t+31d  · contagion path [3→1→2] · p = 0.34</div>
+          <div>t+62d  · 4 agents insolvent · systemic risk = 0.08</div>
+          <div style="color: var(--accent); margin-top:12px;">✓ run complete · 4.6× faster than baseline · $0.71 compute</div>
+        </div>
+      </div>
+      <div style="padding: 0; min-height: 380px; position:relative;">
+        <canvas id="sim-big-canvas" style="position:absolute; inset:0; width:100%; height:100%;"></canvas>
+      </div>
+    </div>
+
+    <div class="grid grid-3" style="margin-top: 48px;">
+      <div class="cell">
+        <div class="tag">Deterministic</div>
+        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Replay any run, bit-for-bit</h4>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Seeded RNG, immutable trajectory logs, and signed run manifests. Reproducibility as a contract, not a hope.</p>
+      </div>
+      <div class="cell">
+        <div class="tag">Counterfactual</div>
+        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Branch at any step</h4>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Fork a running simulation at t=k, mutate one variable, and rejoin the comparison surface. Causal attribution built in.</p>
+      </div>
+      <div class="cell">
+        <div class="tag">Attributable</div>
+        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Explain every outcome</h4>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Shapley-style decomposition over agent interactions. Ship decisions with an audit trail regulators will accept.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS / ARCHITECTURE -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">03 · Architecture</div>
+      <div>
+        <h2 class="section-title">One control plane. Three intelligence primitives. Your infrastructure.</h2>
+      </div>
+    </div>
+
+    <div style="border: 1px solid var(--line); background: var(--surface);">
+      <div style="display:grid; grid-template-columns: 180px 1fr 180px; border-bottom: 1px solid var(--line);">
+        <div style="padding: 16px 20px; border-right: 1px solid var(--line); font-family:var(--mono); font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em;">Control plane</div>
+        <div style="padding: 16px 20px; border-right: 1px solid var(--line); font-size:14px;">BitQubic Fabric · policy, identity, attestation, observability, billing</div>
+        <div style="padding: 16px 20px; font-family:var(--mono); font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em;">Your tenancy</div>
+      </div>
+      <div class="grid grid-3" style="border:0;">
+        <div class="cell cell-surface" style="border-right: 1px solid var(--line);">
+          <div class="tag" style="color:var(--accent)">Simulate</div>
+          <div style="font-size:15px; margin-top:10px;">Agentic runtime</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Python & Rust SDKs. OpenAI, Anthropic, local LLMs, custom policies.</div>
+        </div>
+        <div class="cell cell-surface" style="border-right: 1px solid var(--line);">
+          <div class="tag">Learn</div>
+          <div style="font-size:15px; margin-top:10px;">Federated trainer</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Secure aggregation, DP-SGD, async tolerance. PyTorch & JAX.</div>
+        </div>
+        <div class="cell cell-surface">
+          <div class="tag">Schedule</div>
+          <div style="font-size:15px; margin-top:10px;">Carbon scheduler</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">K8s operator. Electricity Maps, WattTime, on-prem telemetry.</div>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns: 180px 1fr 180px; border-top: 1px solid var(--line);">
+        <div style="padding: 16px 20px; border-right: 1px solid var(--line); font-family:var(--mono); font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em;">Substrate</div>
+        <div style="padding: 16px 20px; border-right: 1px solid var(--line); font-size:14px; color:var(--fg-dim);">Your clusters · your clouds · your HPC · your edge · your airgap</div>
+        <div style="padding: 16px 20px; font-family:var(--mono); font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em;">BYO compute</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="border-bottom: 1px solid var(--line);">
+  <div class="wrap" style="padding: 40px 0; display:grid; grid-template-columns: 1fr auto; gap: 40px; align-items:center;">
+    <h2 style="font-size: clamp(28px, 3vw, 40px); line-height:1.1; margin:0; font-weight:500; letter-spacing:-0.02em; max-width: 22ch;">Ready when your infrastructure is.</h2>
+    <div style="display:flex; gap:12px;">
+      <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
+      <a href="platform.html" class="btn">Platform brief</a>
+    </div>
+  </div>
+</section>
+
+<div id="foot-mount"></div>
+<div id="tweaks-mount"></div>
+
+<script src="assets/shared.js?v=4"></script>
+<script src="assets/swarm.js?v=7"></script>
+<script>
+  // Hero variant switch
+  function applyHero() {
+    const v = document.documentElement.getAttribute('data-hero') || 'swarm';
+    document.querySelectorAll('.hero[data-variant]').forEach(el => {
+      el.style.display = (el.dataset.variant === v) ? '' : 'none';
+    });
+  }
+  applyHero();
+  window.addEventListener('bq-settings-changed', applyHero);
+
+  // Hero tab switcher
+  const tabs = document.querySelectorAll('#hero-tabs .tab');
+  const views = {
+    agents:    document.getElementById('hero-canvas'),
+    federated: document.getElementById('hero-federated'),
+    carbon:    document.getElementById('hero-carbon'),
+  };
+  const footLabels = {
+    agents:    '12,000 agents · 4 cohorts',
+    federated: '6 / 6 participants · drift 0.024',
+    carbon:    '4 regions · marginal intensity',
+  };
+  const runLabels = {
+    agents: 'run #81,402',
+    federated: 'round #1,412',
+    carbon: 'window t−24h',
+  };
+  tabs.forEach(t => {
+    const act = () => {
+      const v = t.dataset.view;
+      tabs.forEach(x => x.classList.toggle('on', x === t));
+      Object.entries(views).forEach(([k, el]) => { if (el) el.style.display = (k === v ? (k === 'agents' ? 'block' : 'block') : 'none'); });
+      document.getElementById('hero-foot-a').textContent = footLabels[v];
+      document.getElementById('hero-run-label').textContent = runLabels[v];
+    };
+    t.addEventListener('click', act);
+    t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } });
+  });
+  // populate carbon bars
+  const hb = document.getElementById('hero-bars');
+  if (hb) {
+    const vals = [34,42,68,52,44,38,46,58,72,88,94,71,54,47,52,66,78,64,50,42,38,46,58,48];
+    hb.innerHTML = vals.map(v => {
+      const color = v > 80 ? 'var(--warn)' : (v < 45 ? 'var(--accent)' : 'var(--fg-dim)');
+      return `<div style="flex:1; height:${v}%; background:${color}; opacity:${v>80?1:0.8};"></div>`;
+    }).join('');
+  }
+
+  // Swarm sims
+  window.addEventListener('load', () => {
+    if (document.getElementById('hero-canvas')) {
+      BQSwarm.init(document.getElementById('hero-canvas'), { count: 180 });
+    }
+    if (document.getElementById('card-sim-1')) {
+      BQSwarm.init(document.getElementById('card-sim-1'), { count: 80 });
+    }
+    if (document.getElementById('sim-big-canvas')) {
+      BQSwarm.init(document.getElementById('sim-big-canvas'), { count: 220 });
+    }
+
+    // Mini bar chart for carbon card — seeded so it looks real
+    const bars = document.getElementById('bars-preview');
+    if (bars) {
+      const vals = [34, 42, 68, 52, 44, 38, 46, 58, 72, 88, 94, 71, 54, 47, 52, 66, 78, 64, 50, 42, 38, 46, 58, 48];
+      bars.innerHTML = vals.map((v, i) => {
+        const isPeak = v > 80;
+        const color = isPeak ? 'var(--warn)' : (v < 45 ? 'var(--accent)' : 'var(--fg-dim)');
+        return `<div style="flex:1; height:${v}%; background:${color}; opacity:${isPeak?1:0.85};"></div>`;
+      }).join('');
+    }
+  });
+</script>
+</body>
+</html>
