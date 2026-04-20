@@ -186,7 +186,7 @@ canvas { display: block; width: 100%; height: 100%; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
   .section-head { grid-template-columns: 1fr; gap: 12px; }
   .nav-links { display: none; }
-  .nav-cta .btn-ghost { display: none; }
+  .nav-cta { display: none; }
   .nav-toggle { display: block; }
   .nav-open .nav-drawer { display: flex; }
 }
