@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Carbon orchestration — BitQubic</title>
+<title>Carbon orchestration · BitQubic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/shared.css?v=3" />
+<link rel="stylesheet" href="assets/shared.css?v=5" />
 <script>const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"lime","hero":"swarm"}/*EDITMODE-END*/;</script>
 </head>
 <body>
@@ -17,7 +17,7 @@
   <div class="wrap">
     <div class="tag" style="margin-bottom: 24px;">Product · Carbon-aware orchestration</div>
     <h1 style="font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.025em; line-height:1.04; margin: 0 0 24px; font-weight: 500; max-width: 22ch;">Schedule against the grid, not the clock.</h1>
-    <p style="color: var(--fg-dim); font-size: 18px; max-width: 62ch; line-height: 1.5; margin: 0 0 40px;">A Kubernetes-native scheduler that reads live marginal grid intensity and moves workloads to where electrons are cleanest — without breaking your SLAs. Accounting included.</p>
+    <p style="color: var(--fg-dim); font-size: 18px; max-width: 62ch; line-height: 1.5; margin: 0 0 40px;">A Kubernetes-native scheduler that reads live electricity-grid carbon data and shifts workloads to cleaner times and places, without breaking your service-level commitments. Emissions tracked and reported automatically.</p>
   </div>
 </section>
 
@@ -39,9 +39,9 @@
     </div>
     <div class="metrics" style="margin-top: 1px;">
       <div class="metric"><div class="metric-num">−38%</div><div class="metric-lbl">Operational emissions, median customer</div></div>
-      <div class="metric"><div class="metric-num">0</div><div class="metric-lbl">SLA violations attributable to scheduler, 2025</div></div>
-      <div class="metric"><div class="metric-num">4</div><div class="metric-lbl">Grid-intensity providers integrated</div></div>
-      <div class="metric"><div class="metric-num">K8s</div><div class="metric-lbl">Native operator · no sidecar required</div></div>
+      <div class="metric"><div class="metric-num">0</div><div class="metric-lbl">Service-level breaches caused by scheduling, 2025</div></div>
+      <div class="metric"><div class="metric-num">4</div><div class="metric-lbl">Grid-data providers integrated</div></div>
+      <div class="metric"><div class="metric-num">K8s</div><div class="metric-lbl">Runs natively in Kubernetes · no extra containers per pod</div></div>
     </div>
   </div>
 </section>
@@ -55,10 +55,10 @@
       </div>
     </div>
     <div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; border:1px solid var(--line);">
-      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag" style="color:var(--accent)">01 · Classify</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Is it deferrable?</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Tag workloads by urgency, deadline, and locality constraints. Interactive ≠ batch.</p></div>
-      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag">02 · Forecast</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Read the grid</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Pull marginal intensity forecasts from Electricity Maps, WattTime, and on-prem telemetry.</p></div>
-      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag">03 · Decide</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Place, defer, or migrate</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Solve a cost-constrained MILP over (region × hour). SLA as a hard constraint.</p></div>
-      <div style="padding: 28px;"><div class="tag">04 · Account</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Sign the ledger</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Emissions per run written to an auditable ledger. GHG Protocol scope 2 ready.</p></div>
+      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag" style="color:var(--accent)">01 · Classify</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Can this job wait?</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Label workloads by urgency, deadline, and where they must run. Interactive jobs are treated differently from batch jobs.</p></div>
+      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag">02 · Forecast</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Read the grid</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Pull live carbon-intensity forecasts from Electricity Maps, WattTime, or your own sensors.</p></div>
+      <div style="padding: 28px; border-right:1px solid var(--line);"><div class="tag">03 · Decide</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Place, defer, or migrate</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Choose the best region and hour by solving a cost-optimized plan. Service-level commitments are hard limits, never relaxed.</p></div>
+      <div style="padding: 28px;"><div class="tag">04 · Account</div><h3 style="font-size:17px; font-weight:500; margin: 14px 0 10px;">Sign the ledger</h3><p style="color:var(--fg-dim); font-size:13.5px; margin:0;">Emissions per run are written to a tamper-evident record, ready for Scope 2 greenhouse-gas accounting.</p></div>
     </div>
   </div>
 </section>
@@ -72,7 +72,7 @@
 
 <div id="foot-mount"></div>
 <div id="tweaks-mount"></div>
-<script src="assets/shared.js?v=4"></script>
+<script src="assets/shared.js?v=11"></script>
 <script>
   window.addEventListener('load', () => {
     const regions = [

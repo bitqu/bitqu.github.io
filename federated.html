@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Federated learning — BitQubic</title>
+<title>Federated learning · BitQubic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/shared.css?v=3" />
+<link rel="stylesheet" href="assets/shared.css?v=5" />
 <script>const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"lime","hero":"swarm"}/*EDITMODE-END*/;</script>
 </head>
 <body>
@@ -17,14 +17,14 @@
   <div class="wrap">
     <div class="tag" style="margin-bottom: 24px;">Product · Federated learning</div>
     <h1 style="font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.025em; line-height:1.04; margin: 0 0 24px; font-weight: 500; max-width: 22ch;">Train on data you never get to see.</h1>
-    <p style="color: var(--fg-dim); font-size: 18px; max-width: 60ch; line-height: 1.5; margin: 0 0 40px;">Secure aggregation, per-participant differential privacy, byzantine tolerance, and async round management — delivered as a trainer that your ML team doesn't have to babysit.</p>
+    <p style="color: var(--fg-dim); font-size: 18px; max-width: 60ch; line-height: 1.5; margin: 0 0 40px;">Train one model across multiple organizations. Each keeps its own data. Privacy safeguards, resilience against unreliable or bad-faith sites, and handling for sites that go offline, all delivered as a trainer your ML team doesn't have to babysit.</p>
   </div>
 </section>
 
 <section class="section" style="padding: 64px 0;">
   <div class="wrap">
     <div style="border: 1px solid var(--line); background: var(--surface); padding: 40px;">
-      <div class="tag" style="margin-bottom: 28px;">Topology · cross-silo deployment</div>
+      <div class="tag" style="margin-bottom: 28px;">Cross-organization deployment</div>
       <svg viewBox="0 0 1000 300" width="100%" style="overflow:visible;">
         <defs>
           <marker id="arrow" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="var(--fg-dim)"/></marker>
@@ -33,7 +33,7 @@
           <!-- Aggregator -->
           <rect x="440" y="120" width="120" height="60" fill="var(--bg)" stroke="var(--accent)"/>
           <text x="500" y="145" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono" font-size="11" letter-spacing="0.05em">AGGREGATOR</text>
-          <text x="500" y="162" text-anchor="middle" fill="var(--fg-dim)" font-family="JetBrains Mono" font-size="10">secure · DP · byzantine</text>
+          <text x="500" y="162" text-anchor="middle" fill="var(--fg-dim)" font-family="JetBrains Mono" font-size="10">secure · private · resilient</text>
           <!-- Participants left -->
           <rect x="40" y="30" width="170" height="50" fill="var(--bg)"/>
           <rect x="40" y="120" width="170" height="50" fill="var(--bg)"/>
@@ -77,10 +77,10 @@
       <div><h2 class="section-title">What the aggregator cannot learn, by construction.</h2></div>
     </div>
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0; border:1px solid var(--line);">
-      <div style="padding: 32px; border-right: 1px solid var(--line);"><div class="tag" style="color:var(--accent)">Secure aggregation</div><h3 style="font-size:19px; font-weight:500; margin: 14px 0 10px; letter-spacing:-0.01em;">Pairwise masking over encrypted channels</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">The aggregator sees only the sum. Individual gradient contributions are cryptographically indistinguishable from noise.</p></div>
-      <div style="padding: 32px;"><div class="tag">Differential privacy</div><h3 style="font-size:19px; font-weight:500; margin: 14px 0 10px; letter-spacing:-0.01em;">Per-participant ε budgets</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">Track spend across rounds. Halt when exhausted. Configurable clipping and noise multipliers.</p></div>
-      <div style="padding: 32px; border-right: 1px solid var(--line); border-top: 1px solid var(--line);"><div class="tag">Byzantine tolerance</div><h3 style="font-size:19px; font-weight:500; margin: 14px 0 10px; letter-spacing:-0.01em;">Robust against ⅓ malicious participants</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">Coordinate-wise trimmed mean, Krum, and RFA available. Convergence preserved under attack.</p></div>
-      <div style="padding: 32px; border-top: 1px solid var(--line);"><div class="tag">Async tolerance</div><h3 style="font-size:19px; font-weight:500; margin: 14px 0 10px; letter-spacing:-0.01em;">Stragglers and dropouts, handled</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">Our staleness-aware aggregator converges under arbitrary site availability. Reference: Chen et al., ICML 2025.</p></div>
+      <div style="padding: 32px; border-right: 1px solid var(--line);"><div class="tag" style="color:var(--accent)">Secure aggregation</div><h3 style="font-size:19px; font-weight:500; margin: 14px 0 10px; letter-spacing:-0.01em;">Only the combined result is visible</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">The central aggregator sees only the sum of all participants' updates. Each individual site's contribution is cryptographically hidden.</p></div>
+      <div style="padding: 32px;"><div class="tag">Differential privacy</div><h3 style="font-size:19px; font-weight:500; margin: 14px 0 10px; letter-spacing:-0.01em;">A measurable privacy budget per site</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">Differential privacy is a mathematical guarantee on how much any single data record can influence the trained model. Each site has a budget (denoted ε); training stops before it's exhausted.</p></div>
+      <div style="padding: 32px; border-right: 1px solid var(--line); border-top: 1px solid var(--line);"><div class="tag">Resilient to bad actors</div><h3 style="font-size:19px; font-weight:500; margin: 14px 0 10px; letter-spacing:-0.01em;">Robust if up to a third of sites misbehave</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">Training continues to converge on a good model even if some participants send corrupted or adversarial updates. Several industry-standard robust methods are available.</p></div>
+      <div style="padding: 32px; border-top: 1px solid var(--line);"><div class="tag">Offline-tolerant</div><h3 style="font-size:19px; font-weight:500; margin: 14px 0 10px; letter-spacing:-0.01em;">Sites can drop out or run slow</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">The aggregator accounts for late or missing updates automatically. No site's outage stalls the whole training.</p></div>
     </div>
   </div>
 </section>
@@ -94,6 +94,6 @@
 
 <div id="foot-mount"></div>
 <div id="tweaks-mount"></div>
-<script src="assets/shared.js?v=4"></script>
+<script src="assets/shared.js?v=11"></script>
 </body>
 </html>
