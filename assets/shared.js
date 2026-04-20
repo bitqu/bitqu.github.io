@@ -40,8 +40,13 @@
     const mount = document.getElementById('nav-mount');
     if (!mount) return;
     const cp = currentPage();
+    const drawerLinks = [
+      ...links,
+      { href: 'about.html', label: 'About' },
+      { href: 'contact.html', label: 'Contact' },
+    ];
     mount.innerHTML = `
-      <nav class="nav"><div class="wrap nav-inner">
+      <nav class="nav" id="bq-nav"><div class="wrap nav-inner">
         <a class="brand" href="index.html">
           <img class="brand-logo" src="assets/logo.png" alt="BitQubic" />
         </a>
@@ -53,8 +58,28 @@
           <a class="btn btn-ghost" href="contact.html">Contact</a>
           <a class="btn btn-primary" href="contact.html">Book a demo <span class="arr">→</span></a>
         </div>
-      </div></nav>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="bq-nav-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-drawer" id="bq-nav-drawer" aria-hidden="true">
+        ${drawerLinks.map(l => `<a href="${l.href}"${cp === l.href ? ' aria-current="page"' : ''}>${l.label}</a>`).join('')}
+        <a class="btn btn-primary" href="contact.html">Book a demo <span class="arr">→</span></a>
+      </div>
+      </nav>
     `;
+
+    const nav = document.getElementById('bq-nav');
+    const toggle = nav.querySelector('.nav-toggle');
+    const drawer = nav.querySelector('.nav-drawer');
+    const setOpen = (open) => {
+      nav.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      drawer.setAttribute('aria-hidden', String(!open));
+    };
+    toggle.addEventListener('click', () => setOpen(!nav.classList.contains('nav-open')));
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
   }
 
   function renderFooter() {
