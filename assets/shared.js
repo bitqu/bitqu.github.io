@@ -43,13 +43,13 @@
     mount.innerHTML = `
       <nav class="nav"><div class="wrap nav-inner">
         <a class="brand" href="index.html">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-name">BitQubic</span>
+          <img class="brand-logo" src="assets/logo.png" alt="BitQubic" />
         </a>
         <div class="nav-links">
           ${links.map(l => `<a href="${l.href}"${cp === l.href ? ' aria-current="page"' : ''}>${l.label}</a>`).join('')}
         </div>
         <div class="nav-cta">
+          <a class="btn btn-ghost" href="about.html">About</a>
           <a class="btn btn-ghost" href="contact.html">Contact</a>
           <a class="btn btn-primary" href="contact.html">Book a demo <span class="arr">→</span></a>
         </div>
@@ -65,13 +65,9 @@
         <div class="foot-grid">
           <div>
             <a class="brand" href="index.html" style="margin-bottom:18px">
-              <span class="brand-mark"></span><span class="brand-name">BitQubic</span>
+              <img class="brand-logo" src="assets/logo.png" alt="BitQubic" />
             </a>
             <p style="color:var(--fg-dim); font-size:14px; max-width:320px; margin:16px 0 0;">Distributed intelligence infrastructure. Built for institutions that treat AI as a system, not a feature.</p>
-            <div style="display:flex; gap:10px; margin-top:20px;">
-              <span class="chip"><span class="dot"></span>SOC 2 Type II</span>
-              <span class="chip">ISO 27001</span>
-            </div>
           </div>
           <div>
             <h5>Products</h5>
@@ -85,34 +81,13 @@
           <div>
             <h5>Company</h5>
             <ul>
-              <li><a href="customers.html">Customers</a></li>
-              <li><a href="careers.html">Careers</a></li>
               <li><a href="contact.html">Contact</a></li>
-              <li><a href="#">Research</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Resources</h5>
-            <ul>
-              <li><a href="#">Whitepapers</a></li>
-              <li><a href="#">Benchmarks</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Status</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Legal</h5>
-            <ul>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">DPA</a></li>
-              <li><a href="#">Trust</a></li>
             </ul>
           </div>
         </div>
         <div class="foot-bottom">
-          <span>© 2026 BitQubic Labs, Inc.</span>
-          <span>Palo Alto · Zürich · Singapore</span>
+          <span>© 2026 BitQubic Corp.</span>
+          <span>Ottawa · Kanata · Calgary</span>
         </div>
       </div></footer>
     `;
@@ -125,12 +100,12 @@
       '<span><b>LIVE</b> 412 federated nodes training · 18 regions</span>',
       '<span><b>GRID</b> eu-north-1 · 38 gCO₂e/kWh · routing +12% load</span>',
       '<span><b>SIM</b> run #81,402 · 12,000 agents · 4.6× baseline</span>',
-      '<span><b>PAPER</b> Chen et al. 2026 · FedAvg drift under async aggregation</span>',
+      '<span><b>RESEARCH</b> stability of federated training when sites go offline</span>',
       '<span><b>GRID</b> us-west-2 · 412 gCO₂e/kWh · deferring batch</span>',
       '<span><b>LIVE</b> 412 federated nodes training · 18 regions</span>',
       '<span><b>GRID</b> eu-north-1 · 38 gCO₂e/kWh · routing +12% load</span>',
       '<span><b>SIM</b> run #81,402 · 12,000 agents · 4.6× baseline</span>',
-      '<span><b>PAPER</b> Chen et al. 2026 · FedAvg drift under async aggregation</span>',
+      '<span><b>RESEARCH</b> stability of federated training when sites go offline</span>',
       '<span><b>GRID</b> us-west-2 · 412 gCO₂e/kWh · deferring batch</span>',
     ];
     mount.innerHTML = `<div class="ticker"><div class="ticker-track">${items.join('')}</div></div>`;

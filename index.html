@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BitQubic — Distributed intelligence infrastructure</title>
+<title>BitQubic · Distributed intelligence infrastructure</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/shared.css?v=4" />
+<link rel="stylesheet" href="assets/shared.css?v=5" />
 <script>
   // Persist tweakable defaults for host to rewrite
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -25,7 +25,7 @@
   <div class="wrap hero-grid">
     <div>
       <h1>Infrastructure for <em>distributed</em> intelligence.</h1>
-      <p class="lead">BitQubic builds the substrate for federated learning, carbon-aware orchestration, and large-scale agentic simulation, deployed inside regulated institutions that cannot move their data and cannot pause their compute.</p>
+      <p class="lead">BitQubic helps regulated organizations train AI on data that cannot leave their walls, simulate real-world scenarios before deciding, and run compute during the cleanest hours on the power grid.</p>
       <div style="display:flex; gap:12px; margin-bottom:40px;">
         <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
         <a href="platform.html" class="btn">Read the platform brief</a>
@@ -109,10 +109,10 @@
 <!-- HERO: editorial variant (hidden by default) -->
 <header class="hero" data-variant="editorial" style="display:none; padding: 96px 0 96px;">
   <div class="wrap">
-    <div class="tag" style="margin-bottom:48px">ESTABLISHED 2022 · PALO ALTO / ZÜRICH</div>
+    <div class="tag" style="margin-bottom:48px">ESTABLISHED 2018 · OTTAWA / KANATA / CALGARY</div>
     <h1 style="max-width: 18ch; margin-bottom: 40px;">Intelligence, <em>federated</em>. Compute, accountable. Simulation, at scale.</h1>
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items:end; border-top:1px solid var(--line); padding-top: 40px;">
-      <p class="lead" style="max-width: 56ch; font-size: 18px;">BitQubic is the distributed intelligence layer trusted by central banks, hospital networks, and the defense primes who can't afford to abstract over their infrastructure. We ship three products; they compose into one platform.</p>
+      <p class="lead" style="max-width: 56ch; font-size: 18px;">BitQubic is distributed-intelligence infrastructure for organizations that need to keep their data and compute on their own premises. Three products that work together or alone: agentic simulations, federated learning, and carbon-aware scheduling.</p>
       <div style="display:flex; gap:12px; justify-content:flex-end;">
         <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
         <a href="platform.html" class="btn">Platform brief</a>
@@ -131,7 +131,7 @@
       <div class="tag">01 · Products</div>
       <div>
         <h2 class="section-title">Three products. One substrate. Deployed together or alone.</h2>
-        <p class="section-sub">Each product is independently usable. Together they form a coherent platform for institutions running intelligence across jurisdictions, hardware fleets, and regulatory boundaries.</p>
+        <p class="section-sub">Each product works on its own. Together they form a single platform for organizations that run AI across different regions, hardware, and regulatory environments.</p>
       </div>
     </div>
 
@@ -140,7 +140,7 @@
       <a href="simulations.html" class="cell" style="display:block; text-decoration:none;">
         <div class="tag" style="color:var(--accent)">Pillar · Agentic simulations</div>
         <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Rehearse futures before they cost you anything.</h3>
-        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Run 10⁴–10⁶ agent populations against stochastic environments. Deterministic replay, counterfactual branches, causal attribution.</p>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Run up to a million simulated agents in a virtual world. Replay any run exactly, branch on any decision, and trace every outcome back to its cause.</p>
         <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); position:relative;">
           <canvas id="card-sim-1" style="position:absolute; inset:0;"></canvas>
         </div>
@@ -150,7 +150,7 @@
       <a href="federated.html" class="cell" style="display:block; text-decoration:none;">
         <div class="tag">Product · Federated learning</div>
         <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Train without moving the data.</h3>
-        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Secure aggregation, differential privacy budgets, and async tolerance for sites that go offline. Cross-silo and cross-device, one API.</p>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Train one model across many organizations without raw data ever leaving any site. Privacy safeguards built in, and resilient when sites go offline.</p>
         <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); padding: 20px;">
           <svg viewBox="0 0 400 120" width="100%" height="100%" style="overflow:visible;">
             <g fill="none" stroke="var(--line-2)" stroke-width="1">
@@ -182,7 +182,7 @@
       <a href="orchestration.html" class="cell" style="display:block; text-decoration:none;">
         <div class="tag">Product · Carbon orchestration</div>
         <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Schedule against the grid, not the clock.</h3>
-        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Kubernetes-native scheduler that reads marginal grid intensity and reshapes workloads in flight. SLA preserved, emissions priced.</p>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">A scheduler for Kubernetes clusters that reads live electricity-grid carbon data and shifts jobs to cleaner hours. Service commitments preserved; emissions measured per run.</p>
         <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); padding: 16px 20px; display:flex; align-items:flex-end; gap: 4px;">
           <!-- mini bar chart -->
           <script>/* bars rendered by inline JS at bottom */</script>
@@ -212,7 +212,7 @@
       <div class="tag">02 · Lead product</div>
       <div>
         <h2 class="section-title">Agentic simulation is the decision layer we built the company around.</h2>
-        <p class="section-sub">Every regulatory body, central bank, and frontier research team we work with has the same question: what happens when this policy, this drug, this market mechanism, or this deployment strategy meets the real world? We help them ask it safely — a million times — before it goes live.</p>
+        <p class="section-sub">Regulators, banks, and research teams all share one question: what happens when this policy, drug, or strategy meets the real world? We help them ask it safely, thousands of times over, before anyone commits.</p>
       </div>
     </div>
 
@@ -223,7 +223,7 @@
           <div><span style="color:var(--accent)">▸</span> Initialize 12,000 heterogeneous agents across 4 cohorts</div>
           <div><span style="color:var(--accent)">▸</span> Seed with Basel-IV stressed balance sheets (Q1 '26 snapshot)</div>
           <div><span style="color:var(--accent)">▸</span> Run 90-day horizon · 400 parallel counterfactual branches</div>
-          <div style="color:var(--muted); margin-top:12px;">— stepping —</div>
+          <div style="color:var(--muted); margin-top:12px;">... stepping ...</div>
           <div style="margin-top:4px;">t+14d  · liquidity pressure detected in cohort 3 (22 agents)</div>
           <div>t+31d  · contagion path [3→1→2] · p = 0.34</div>
           <div>t+62d  · 4 agents insolvent · systemic risk = 0.08</div>
@@ -239,17 +239,17 @@
       <div class="cell">
         <div class="tag">Deterministic</div>
         <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Replay any run, bit-for-bit</h4>
-        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Seeded RNG, immutable trajectory logs, and signed run manifests. Reproducibility as a contract, not a hope.</p>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Every run is reproducible: same starting state, same result, down to each agent's decisions. Logs are signed and tamper-evident.</p>
       </div>
       <div class="cell">
         <div class="tag">Counterfactual</div>
         <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Branch at any step</h4>
-        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Fork a running simulation at t=k, mutate one variable, and rejoin the comparison surface. Causal attribution built in.</p>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Pause a simulation at any point, change a single input, and keep both versions running side by side. Compare them to see exactly what that change caused.</p>
       </div>
       <div class="cell">
         <div class="tag">Attributable</div>
         <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Explain every outcome</h4>
-        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Shapley-style decomposition over agent interactions. Ship decisions with an audit trail regulators will accept.</p>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Break any outcome down into the contributions of individual agents and their interactions. Ship decisions with an audit trail a regulator will accept.</p>
       </div>
     </div>
   </div>
@@ -275,17 +275,17 @@
         <div class="cell cell-surface" style="border-right: 1px solid var(--line);">
           <div class="tag" style="color:var(--accent)">Simulate</div>
           <div style="font-size:15px; margin-top:10px;">Agentic runtime</div>
-          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Python & Rust SDKs. OpenAI, Anthropic, local LLMs, custom policies.</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Software kit for Python and Rust. Works with OpenAI, Anthropic, or locally-hosted models.</div>
         </div>
         <div class="cell cell-surface" style="border-right: 1px solid var(--line);">
           <div class="tag">Learn</div>
           <div style="font-size:15px; margin-top:10px;">Federated trainer</div>
-          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Secure aggregation, DP-SGD, async tolerance. PyTorch & JAX.</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Raw data stays on each site. Supports PyTorch and JAX with built-in privacy and resilience.</div>
         </div>
         <div class="cell cell-surface">
           <div class="tag">Schedule</div>
           <div style="font-size:15px; margin-top:10px;">Carbon scheduler</div>
-          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">K8s operator. Electricity Maps, WattTime, on-prem telemetry.</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Kubernetes add-on that reads grid data from Electricity Maps, WattTime, or your own sensors.</div>
         </div>
       </div>
       <div style="display:grid; grid-template-columns: 180px 1fr 180px; border-top: 1px solid var(--line);">
@@ -311,7 +311,7 @@
 <div id="foot-mount"></div>
 <div id="tweaks-mount"></div>
 
-<script src="assets/shared.js?v=4"></script>
+<script src="assets/shared.js?v=11"></script>
 <script src="assets/swarm.js?v=7"></script>
 <script>
   // Hero variant switch

@@ -60,12 +60,9 @@ img { max-width: 100%; display: block; }
 /* Header */
 .nav { position: sticky; top: 0; z-index: 60; background: color-mix(in oklab, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; }
-.brand { display: flex; align-items: center; gap: 10px; letter-spacing: -0.01em; }
-.brand-mark { width: 18px; height: 18px; position: relative; display: inline-block; }
-.brand-mark::before, .brand-mark::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--fg); }
-.brand-mark::after { transform: translate(4px, 4px); border-color: var(--accent); }
-.brand-name { font-weight: 600; font-size: 15px; }
-.brand-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: 6px; padding-left: 10px; border-left: 1px solid var(--line); }
+.brand { display: flex; align-items: center; letter-spacing: -0.01em; }
+.brand-logo { height: 24px; width: auto; display: block; }
+.brand-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: 10px; padding-left: 10px; border-left: 1px solid var(--line); }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a { font-size: 13.5px; color: var(--fg-dim); }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--fg); }
