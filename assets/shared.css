@@ -68,6 +68,22 @@ img { max-width: 100%; display: block; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--fg); }
 .nav-cta { display: flex; gap: 10px; align-items: center; }
 
+/* Mobile menu toggle + drawer */
+.nav-toggle { display: none; width: 36px; height: 36px; background: transparent; border: 1px solid var(--line-2); cursor: pointer; padding: 0; position: relative; margin-left: 8px; }
+.nav-toggle:hover { border-color: var(--fg-dim); }
+.nav-toggle span { display: block; position: absolute; left: 8px; right: 8px; height: 1.5px; background: var(--fg); transition: transform .2s ease, opacity .15s ease, top .2s ease; }
+.nav-toggle span:nth-child(1) { top: 11px; }
+.nav-toggle span:nth-child(2) { top: 17px; }
+.nav-toggle span:nth-child(3) { top: 23px; }
+.nav-open .nav-toggle span:nth-child(1) { top: 17px; transform: rotate(45deg); }
+.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav-open .nav-toggle span:nth-child(3) { top: 17px; transform: rotate(-45deg); }
+
+.nav-drawer { display: none; position: absolute; top: 100%; left: 0; right: 0; background: color-mix(in oklab, var(--bg) 96%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); padding: 8px var(--pad) 20px; flex-direction: column; }
+.nav-drawer > a:not(.btn) { color: var(--fg-dim); font-size: 15px; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.nav-drawer > a:not(.btn):hover, .nav-drawer > a[aria-current="page"] { color: var(--fg); }
+.nav-drawer > a.btn { margin-top: 20px; justify-content: center; }
+
 /* Buttons */
 .btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border: 1px solid var(--line-2); color: var(--fg); font-size: 13.5px; letter-spacing: -0.005em; transition: background .15s ease, border-color .15s ease, color .15s ease; }
 .btn:hover { border-color: var(--fg-dim); }
@@ -170,6 +186,9 @@ canvas { display: block; width: 100%; height: 100%; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
   .section-head { grid-template-columns: 1fr; gap: 12px; }
   .nav-links { display: none; }
+  .nav-cta .btn-ghost { display: none; }
+  .nav-toggle { display: block; }
+  .nav-open .nav-drawer { display: flex; }
 }
 
 @media (max-width: 720px) {
@@ -185,8 +204,6 @@ canvas { display: block; width: 100%; height: 100%; }
   .hero h1 { font-size: clamp(30px, 8vw, 44px); }
   .hero p.lead { font-size: 15.5px; }
 
-  /* Nav: hide ghost CTAs (About, Contact), keep primary Book-a-demo */
-  .nav-cta .btn-ghost { display: none; }
   .nav-inner { gap: 12px; }
   .brand-logo { height: 22px; }
 
