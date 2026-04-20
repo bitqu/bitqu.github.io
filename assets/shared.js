@@ -113,7 +113,7 @@
         </div>
         <div class="foot-bottom">
           <span>© 2026 BitQubic Corp.</span>
-          <span>Ottawa · Kanata · Calgary</span>
+          <span>Ottawa · Calgary</span>
         </div>
       </div></footer>
     `;
