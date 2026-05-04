@@ -31,9 +31,9 @@
   }
   const links = [
     { href: 'platform.html', label: 'Platform' },
-    { href: 'simulations.html', label: 'Agentic Simulations' },
-    { href: 'federated.html', label: 'Federated Learning' },
-    { href: 'orchestration.html', label: 'Carbon Orchestration' },
+    { href: 'platform-engineering.html', label: 'Platform Engineering' },
+    { href: 'cloud-modernization.html', label: 'Cloud Modernization' },
+    { href: 'kubernetes-orchestration.html', label: 'Kubernetes Orchestration' },
   ];
 
   function renderNav() {
@@ -92,14 +92,14 @@
             <a class="brand" href="index.html" style="margin-bottom:18px">
               <img class="brand-logo" src="assets/logo.png" alt="BitQubic" />
             </a>
-            <p style="color:var(--fg-dim); font-size:14px; max-width:320px; margin:16px 0 0;">Distributed intelligence infrastructure. Built for institutions that treat AI as a system, not a feature.</p>
+            <p style="color:var(--fg-dim); font-size:14px; max-width:320px; margin:16px 0 0;">Cloud native infrastructure for teams that run Kubernetes, platforms, and production workloads as a system.</p>
           </div>
           <div>
             <h5>Products</h5>
             <ul>
-              <li><a href="simulations.html">Agentic simulations</a></li>
-              <li><a href="federated.html">Federated learning</a></li>
-              <li><a href="orchestration.html">Carbon orchestration</a></li>
+              <li><a href="platform-engineering.html">Platform engineering</a></li>
+              <li><a href="cloud-modernization.html">Cloud modernization</a></li>
+              <li><a href="kubernetes-orchestration.html">Kubernetes orchestration</a></li>
               <li><a href="platform.html">Platform</a></li>
             </ul>
           </div>
@@ -123,16 +123,16 @@
     const mount = document.getElementById('ticker-mount');
     if (!mount) return;
     const items = [
-      '<span><b>LIVE</b> 412 federated nodes training · 18 regions</span>',
-      '<span><b>GRID</b> eu-north-1 · 38 gCO₂e/kWh · routing +12% load</span>',
-      '<span><b>SIM</b> run #81,402 · 12,000 agents · 4.6× baseline</span>',
-      '<span><b>RESEARCH</b> stability of federated training when sites go offline</span>',
-      '<span><b>GRID</b> us-west-2 · 412 gCO₂e/kWh · deferring batch</span>',
-      '<span><b>LIVE</b> 412 federated nodes training · 18 regions</span>',
-      '<span><b>GRID</b> eu-north-1 · 38 gCO₂e/kWh · routing +12% load</span>',
-      '<span><b>SIM</b> run #81,402 · 12,000 agents · 4.6× baseline</span>',
-      '<span><b>RESEARCH</b> stability of federated training when sites go offline</span>',
-      '<span><b>GRID</b> us-west-2 · 412 gCO₂e/kWh · deferring batch</span>',
+      '<span><b>LIVE</b> 412 Kubernetes nodes · 18 regions</span>',
+      '<span><b>DEPLOY</b> eu-north-1 · progressive rollout · 12% canary</span>',
+      '<span><b>SLO</b> checkout-api · 99.98% availability</span>',
+      '<span><b>PLATFORM</b> golden paths for build, deploy, observe, and recover</span>',
+      '<span><b>OPS</b> us-west-2 · batch queue shifted to lower-cost capacity</span>',
+      '<span><b>LIVE</b> 412 Kubernetes nodes · 18 regions</span>',
+      '<span><b>DEPLOY</b> eu-north-1 · progressive rollout · 12% canary</span>',
+      '<span><b>SLO</b> checkout-api · 99.98% availability</span>',
+      '<span><b>PLATFORM</b> golden paths for build, deploy, observe, and recover</span>',
+      '<span><b>OPS</b> us-west-2 · batch queue shifted to lower-cost capacity</span>',
     ];
     mount.innerHTML = `<div class="ticker"><div class="ticker-track">${items.join('')}</div></div>`;
   }

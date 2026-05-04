@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Platform engineering · BitQubic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css?v=8" />
+<script>const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"lime","hero":"swarm"}/*EDITMODE-END*/;</script>
+</head>
+<body>
+<div id="nav-mount"></div>
+
+<section class="section" style="border-top:0; padding: 72px 0 48px;">
+  <div class="wrap">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:48px; align-items:end;">
+      <div>
+        <div class="tag" style="margin-bottom: 24px;"><span class="dot"></span>Pillar product</div>
+        <h1 style="font-size: clamp(40px, 5.2vw, 68px); letter-spacing: -0.025em; line-height:1.02; margin: 0 0 24px; font-weight: 500;">Platform engineering.</h1>
+        <p style="color: var(--fg-dim); font-size: 18px; max-width: 54ch; line-height: 1.5; margin: 0;">Give every team a clear path from commit to production. Standardize the platform pieces without turning Kubernetes into a black box.</p>
+      </div>
+      <div class="sim-frame" style="min-height: 340px;">
+        <div class="sim-head"><span>platform.graph.live</span><span>412 nodes</span></div>
+        <div class="sim-body"><canvas id="sim"></canvas></div>
+        <div class="sim-foot"><span>release #81,402 · stable</span><span><span class="dot" style="background:var(--ok)"></span>62 fps</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">01 · What it does</div>
+      <div>
+        <h2 class="section-title">Three capabilities, composable.</h2>
+        <p class="section-sub">We build around three things platform teams consistently need: repeatable environments, self-service delivery, and a traceable path from change to production outcome.</p>
+      </div>
+    </div>
+    <div class="grid grid-3">
+      <div class="cell"><div class="tag" style="color:var(--accent)">01</div><h3 style="font-size: 22px; font-weight:500; letter-spacing:-0.015em; margin:14px 0 10px;">Golden paths</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">Create service templates, pipelines, policy defaults, observability hooks, and production-readiness checks that teams can use without waiting on tickets.</p></div>
+      <div class="cell"><div class="tag">02</div><h3 style="font-size: 22px; font-weight:500; letter-spacing:-0.015em; margin:14px 0 10px;">Controlled delivery</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">Move changes through dev, staging, and production with progressive rollouts, health gates, rollback automation, and signed release evidence.</p></div>
+      <div class="cell"><div class="tag">03</div><h3 style="font-size: 22px; font-weight:500; letter-spacing:-0.015em; margin:14px 0 10px;">Operational clarity</h3><p style="color:var(--fg-dim); font-size:14.5px; margin:0;">Connect deploy events, metrics, traces, logs, and policy decisions so teams can see what changed and act before customers feel it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">02 · Scenarios</div>
+      <div>
+        <h2 class="section-title">What our customers standardize.</h2>
+      </div>
+    </div>
+    <div style="border:1px solid var(--line);">
+      <div style="display:grid; grid-template-columns: 220px 1fr 140px; border-bottom:1px solid var(--line); padding: 20px 24px; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted);">
+        <div>Area</div><div>Platform work</div><div style="text-align:right;">Scale</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 220px 1fr 140px; border-bottom:1px solid var(--line); padding: 22px 24px; align-items:center;">
+        <div><span class="chip">Delivery</span></div>
+        <div>Golden paths for service creation, CI/CD, artifact promotion, policy checks, and audit-ready release records</div>
+        <div style="text-align:right; font-family:var(--mono); font-size:13px;">1.2 × 10⁴</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 220px 1fr 140px; border-bottom:1px solid var(--line); padding: 22px 24px; align-items:center;">
+        <div><span class="chip">Runtime</span></div>
+        <div>Kubernetes clusters with consistent ingress, secrets, network policy, autoscaling, backup, and recovery patterns</div>
+        <div style="text-align:right; font-family:var(--mono); font-size:13px;">4.8 × 10⁵</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 220px 1fr 140px; border-bottom:1px solid var(--line); padding: 22px 24px; align-items:center;">
+        <div><span class="chip">Security</span></div>
+        <div>Workload identity, image provenance, admission control, vulnerability gates, and least-privilege access</div>
+        <div style="text-align:right; font-family:var(--mono); font-size:13px;">3.1 × 10³</div>
+      </div>
+      <div style="display:grid; grid-template-columns: 220px 1fr 140px; padding: 22px 24px; align-items:center;">
+        <div><span class="chip">Operations</span></div>
+        <div>SLOs, incident workflows, dashboards, on-call signals, and cost controls that work across teams</div>
+        <div style="text-align:right; font-family:var(--mono); font-size:13px;">2.0 × 10⁴</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">03 · SDK</div>
+      <div><h2 class="section-title">A platform interface that gets out of the way.</h2></div>
+    </div>
+    <div style="background: var(--surface); border: 1px solid var(--line); padding: 28px 32px; font-family: var(--mono); font-size: 13.5px; line-height: 1.75; overflow-x:auto;">
+<pre style="margin:0; color:var(--fg-dim);"><span style="color:var(--muted)"># define service, environment, policy. release at scale</span>
+<span style="color:var(--accent)">from</span> bitqubic <span style="color:var(--accent)">import</span> Service, Environment, rollout
+
+svc = Service.from_template(<span style="color:#ffb23e">"api-service"</span>, name=<span style="color:#ffb23e">"checkout"</span>)
+svc.attach_policy(<span style="color:#ffb23e">"baseline/restricted"</span>)
+svc.enable_observability(<span style="color:#ffb23e">"golden-signals"</span>)
+
+prod = Environment(name=<span style="color:#ffb23e">"prod-west"</span>, clusters=<span style="color:#ffb23e">18</span>)
+
+<span style="color:var(--accent)">with</span> rollout.canary(service=svc, target=prod, percent=<span style="color:#ffb23e">10</span>) <span style="color:var(--accent)">as</span> release:
+    release.gate_on(<span style="color:#ffb23e">"p95_latency_ms"</span>, lt=<span style="color:#ffb23e">250</span>)
+    release.promote(percent=<span style="color:#ffb23e">100</span>)
+
+report = release.audit_trail().sign()
+<span style="color:var(--muted)"># -> repeatable, observable, production-ready</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="display:grid; grid-template-columns: 1fr auto; gap:40px; align-items:center; padding: 40px 0;">
+    <h2 style="font-size: clamp(28px, 3vw, 40px); line-height:1.1; margin:0; font-weight:500; letter-spacing:-0.02em;">See your platform path mapped end to end.</h2>
+    <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
+  </div>
+</section>
+
+<div id="foot-mount"></div>
+<div id="tweaks-mount"></div>
+<script src="assets/shared.js?v=14"></script>
+<script src="assets/swarm.js?v=7"></script>
+<script>window.addEventListener('load', () => { BQSwarm.init(document.getElementById('sim'), { count: 200 }); });</script>
+</body>
+</html>

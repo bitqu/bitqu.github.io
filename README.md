@@ -18,7 +18,7 @@ Then open http://localhost:8000/.
 
 | Path | Purpose |
 | --- | --- |
-| `index.html`, `platform.html`, `simulations.html`, `federated.html`, `orchestration.html`, `contact.html` | Published pages |
+| `index.html`, `platform.html`, `platform-engineering.html`, `cloud-modernization.html`, `kubernetes-orchestration.html`, `contact.html` | Published pages |
 | `assets/shared.css` | Design tokens, theme/accent variants, component styles |
 | `assets/shared.js` | Nav, footer, ticker, and tweaks-panel injection; theme persistence |
 | `assets/swarm.js` | Canvas-based agent simulation visualization |

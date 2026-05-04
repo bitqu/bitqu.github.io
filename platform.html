@@ -22,8 +22,8 @@
 <section class="section" style="border-top: 0; padding: 88px 0 64px;">
   <div class="wrap">
     <div class="tag" style="margin-bottom: 28px;">Platform · v3.2.0-lts</div>
-    <h1 style="font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.025em; line-height:1.05; margin: 0 0 28px; font-weight: 500; max-width: 18ch;">One platform for distributed intelligence.</h1>
-    <p style="color: var(--fg-dim); font-size: 18px; max-width: 62ch; line-height: 1.5; margin: 0 0 40px;">BitQubic Fabric is the control layer that ties simulation, federated training, and carbon-aware scheduling together. It handles policy, identity, audit, observability, and billing, while the actual compute runs on your own infrastructure.</p>
+    <h1 style="font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.025em; line-height:1.05; margin: 0 0 28px; font-weight: 500; max-width: 18ch;">One platform for cloud native operations.</h1>
+    <p style="color: var(--fg-dim); font-size: 18px; max-width: 62ch; line-height: 1.5; margin: 0 0 40px;">BitQubic Fabric is the control layer that ties platform engineering, cloud modernization, and Kubernetes orchestration together. It handles policy, identity, audit, observability, and billing, while the actual compute runs on your own infrastructure.</p>
     <div style="display:flex; gap:12px;">
       <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
       <a href="#architecture" class="btn">See the architecture</a>
@@ -36,7 +36,7 @@
     <div class="section-head">
       <div class="tag">01 · Architecture</div>
       <div>
-        <h2 class="section-title">Four layers. One contract: your data does not move unless you say so.</h2>
+        <h2 class="section-title">Four layers. One contract: production stays understandable.</h2>
       </div>
     </div>
 
@@ -44,21 +44,21 @@
       <!-- Layer 1 -->
       <div style="display:grid; grid-template-columns: 200px 1fr 1fr 1fr; border-bottom: 1px solid var(--line);">
         <div style="padding: 24px; border-right: 1px solid var(--line); background: var(--surface);"><div class="tag" style="color:var(--accent)">Fabric</div><div style="font-size: 15px; margin-top: 8px;">Control plane</div></div>
-        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Policy</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Define rules about who can use which data for which purpose. Policy language is compatible with Open Policy Agent (OPA).</div></div>
-        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Attestation</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Every worker proves its identity with a hardware signature before running. Supports Intel SGX, AMD SEV-SNP, and AWS Nitro, the industry-standard confidential-computing technologies.</div></div>
-        <div style="padding: 24px;"><div class="tag">Audit</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Every run produces a signed, tamper-evident record that a regulator can verify independently.</div></div>
+        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Policy</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Define rules about who can deploy, where workloads may run, and which controls are mandatory. Policy language is compatible with Open Policy Agent (OPA).</div></div>
+        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Identity</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Every workload, pipeline, and operator has a verified identity before it can act. Supports workload identity, signed images, and secretless service access.</div></div>
+        <div style="padding: 24px;"><div class="tag">Audit</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Every release and platform decision produces a signed, tamper-evident record operations and compliance teams can verify independently.</div></div>
       </div>
       <!-- Layer 2 -->
       <div style="display:grid; grid-template-columns: 200px 1fr 1fr 1fr; border-bottom: 1px solid var(--line);">
-        <div style="padding: 24px; border-right: 1px solid var(--line); background: var(--surface);"><div class="tag">Primitives</div><div style="font-size: 15px; margin-top: 8px;">Intelligence layer</div></div>
-        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Simulate</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Agentic runtime · up to a million agents · exact replay</div></div>
-        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Learn</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Federated trainer · privacy-preserving · tolerant of offline sites</div></div>
-        <div style="padding: 24px;"><div class="tag">Schedule</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Carbon scheduler · reads live grid data · Kubernetes native</div></div>
+        <div style="padding: 24px; border-right: 1px solid var(--line); background: var(--surface);"><div class="tag">Primitives</div><div style="font-size: 15px; margin-top: 8px;">Cloud native layer</div></div>
+        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Build</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Golden paths · service templates · production readiness</div></div>
+        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Modernize</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Migration waves · containerization · dependency mapping</div></div>
+        <div style="padding: 24px;"><div class="tag">Operate</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Kubernetes orchestration · SLO-aware · policy native</div></div>
       </div>
       <!-- Layer 3 -->
       <div style="display:grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid var(--line);">
         <div style="padding: 24px; border-right: 1px solid var(--line); background: var(--surface);"><div class="tag">Runtime</div><div style="font-size: 15px; margin-top: 8px;">Execution</div></div>
-        <div style="padding: 24px; color:var(--fg-dim); font-size:13.5px;">Rust core. Python bindings for PyTorch and JAX. Extensible via WebAssembly (WASM) plugins. Fast, encrypted network transport. Artifacts stored by content hash rather than file path.</div>
+        <div style="padding: 24px; color:var(--fg-dim); font-size:13.5px;">Rust core. Kubernetes controllers and CLI tooling. Extensible via WebAssembly (WASM) plugins. Fast, encrypted network transport. Artifacts stored by content hash rather than file path.</div>
       </div>
       <!-- Layer 4 -->
       <div style="display:grid; grid-template-columns: 200px 1fr;">
@@ -74,21 +74,21 @@
     <div class="section-head">
       <div class="tag">02 · What you get</div>
       <div>
-        <h2 class="section-title">The parts that matter when you're running intelligence as infrastructure.</h2>
+        <h2 class="section-title">The parts that matter when you're running cloud native as infrastructure.</h2>
       </div>
     </div>
     <div style="display:grid; grid-template-columns: 1fr 1fr;">
       <div style="padding-right: 48px;">
-        <div class="feat"><div class="feat-num">01</div><div><div class="feat-title">Policy engine</div><div class="feat-body">Spell out which data is allowed to leave which site, in a clear policy language. Rules are enforced automatically when workloads run.</div></div></div>
-        <div class="feat"><div class="feat-num">02</div><div><div class="feat-title">Unified observability</div><div class="feat-body">One dashboard for simulation runs, training rounds, and carbon metrics. Integrates with the OpenTelemetry standard.</div></div></div>
-        <div class="feat"><div class="feat-num">03</div><div><div class="feat-title">Cryptographic lineage</div><div class="feat-body">Every input, model, and run is fingerprinted and signed so you can always trace what produced what.</div></div></div>
+        <div class="feat"><div class="feat-num">01</div><div><div class="feat-title">Policy engine</div><div class="feat-body">Spell out where workloads can run, what they must prove, and which release controls apply. Rules are enforced automatically when workloads run.</div></div></div>
+        <div class="feat"><div class="feat-num">02</div><div><div class="feat-title">Unified observability</div><div class="feat-body">One operational view for deployments, clusters, services, SLOs, and cost signals. Integrates with the OpenTelemetry standard.</div></div></div>
+        <div class="feat"><div class="feat-num">03</div><div><div class="feat-title">Release lineage</div><div class="feat-body">Every manifest, image, policy, approval, and rollout is fingerprinted and signed so you can trace what produced what.</div></div></div>
         <div class="feat"><div class="feat-num">04</div><div><div class="feat-title">Fast to production</div><div class="feat-body">Most deployments reach their first production workload in under two weeks.</div></div></div>
       </div>
       <div style="border-left: 1px solid var(--line); padding-left: 48px;">
-        <div class="feat"><div class="feat-num">05</div><div><div class="feat-title">Resilient to bad actors</div><div class="feat-body">Training stays on track even if up to a third of participating sites are compromised or malfunctioning, with no loss of model quality.</div></div></div>
+        <div class="feat"><div class="feat-num">05</div><div><div class="feat-title">Resilient by design</div><div class="feat-body">Rollouts stay controlled when clusters degrade, dependencies fail, or teams need to recover quickly from a bad release.</div></div></div>
         <div class="feat"><div class="feat-num">06</div><div><div class="feat-title">Zero-trust networking</div><div class="feat-body">Every workload has its own verified identity. No shared passwords or certificates. All connections are mutually authenticated and encrypted.</div></div></div>
-        <div class="feat"><div class="feat-num">07</div><div><div class="feat-title">Billing by project</div><div class="feat-body">Track spending by research program or team, not by individual machine. Chargeback reports are audit-ready.</div></div></div>
-        <div class="feat"><div class="feat-num">08</div><div><div class="feat-title">Disaster-drill mode</div><div class="feat-body">Simulate a regional outage in production without affecting real users. Quarterly resilience reports included.</div></div></div>
+        <div class="feat"><div class="feat-num">07</div><div><div class="feat-title">Billing by project</div><div class="feat-body">Track spending by product, environment, or team, not by individual machine. Chargeback reports are audit-ready.</div></div></div>
+        <div class="feat"><div class="feat-num">08</div><div><div class="feat-title">Disaster-drill mode</div><div class="feat-body">Exercise a regional outage in production without affecting real users. Quarterly resilience reports included.</div></div></div>
       </div>
     </div>
   </div>

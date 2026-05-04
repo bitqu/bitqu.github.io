@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BitQubic · Distributed intelligence infrastructure</title>
+<title>BitQubic · Cloud native infrastructure</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,8 +24,8 @@
 <header class="hero" data-variant="swarm">
   <div class="wrap hero-grid">
     <div>
-      <h1>Infrastructure for <em>distributed</em> intelligence.</h1>
-      <p class="lead">BitQubic helps regulated organizations train AI on data that cannot leave their walls, simulate real-world scenarios before deciding, and run compute during the cleanest hours on the power grid.</p>
+      <h1>Infrastructure for <em>cloud native</em> systems.</h1>
+      <p class="lead">BitQubic helps organizations design Kubernetes platforms, modernize legacy workloads, and run production systems with clear policy, observability, and operational control.</p>
       <div style="display:flex; gap:12px; margin-bottom:40px;">
         <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
         <a href="platform.html" class="btn">Read the platform brief</a>
@@ -40,18 +40,18 @@
       <div class="sim-frame">
         <div class="sim-head">
           <div class="tabs" id="hero-tabs">
-            <span class="tab on" data-view="agents" role="button" tabindex="0">agentic_sim.live</span>
-            <span class="tab" data-view="federated" role="button" tabindex="0">federated.net</span>
-            <span class="tab" data-view="carbon" role="button" tabindex="0">carbon.grid</span>
+            <span class="tab on" data-view="agents" role="button" tabindex="0">cluster.topology</span>
+            <span class="tab" data-view="federated" role="button" tabindex="0">gitops.deploy</span>
+            <span class="tab" data-view="carbon" role="button" tabindex="0">ops.slo</span>
           </div>
-          <span id="hero-run-label">run #81,402</span>
+          <span id="hero-run-label">release #81,402</span>
         </div>
         <div class="sim-body">
           <canvas id="hero-canvas"></canvas>
           <div id="hero-federated" style="position:absolute; inset:0; display:none; padding:24px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-              <div class="tag" style="color:var(--accent)">Round 1,412 · 6 participants</div>
-              <div class="tag">ε 2.4 / 8.0</div>
+              <div class="tag" style="color:var(--accent)">Release 1,412 · 6 environments</div>
+              <div class="tag">policy 24 / 24</div>
             </div>
             <svg viewBox="0 0 520 280" width="100%" height="calc(100% - 30px)" preserveAspectRatio="xMidYMid meet">
               <defs>
@@ -60,8 +60,8 @@
               <g fill="none" stroke="var(--line-2)">
                 <rect x="220" y="120" width="80" height="40" fill="var(--bg)" stroke="var(--accent)"/>
               </g>
-              <text x="260" y="138" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono" font-size="10" letter-spacing="0.05em">AGG</text>
-              <text x="260" y="152" text-anchor="middle" fill="var(--fg-dim)" font-family="JetBrains Mono" font-size="9">secure·DP</text>
+              <text x="260" y="138" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono" font-size="10" letter-spacing="0.05em">GITOPS</text>
+              <text x="260" y="152" text-anchor="middle" fill="var(--fg-dim)" font-family="JetBrains Mono" font-size="9">policy·sync</text>
               <g fill="none" stroke="var(--line-2)">
                 <rect x="30" y="30" width="130" height="36" fill="var(--bg)"/>
                 <rect x="30" y="122" width="130" height="36" fill="var(--bg)"/>
@@ -71,12 +71,12 @@
                 <rect x="360" y="214" width="130" height="36" fill="var(--bg)"/>
               </g>
               <g font-family="Inter Tight" font-size="11" fill="var(--fg)">
-                <text x="40" y="52">Participant A</text>
-                <text x="40" y="144">Participant B</text>
-                <text x="40" y="236">Participant F</text>
-                <text x="370" y="52">Participant D</text>
-                <text x="370" y="144">Participant E</text>
-                <text x="370" y="236">Participant G</text>
+                <text x="40" y="52">Dev cluster</text>
+                <text x="40" y="144">Staging</text>
+                <text x="40" y="236">Edge site</text>
+                <text x="370" y="52">Prod east</text>
+                <text x="370" y="144">Prod west</text>
+                <text x="370" y="236">Airgap</text>
               </g>
               <g stroke="var(--line-2)" fill="none" stroke-dasharray="3 4">
                 <line x1="160" y1="48" x2="220" y2="132" marker-end="url(#fa)"/>
@@ -90,15 +90,15 @@
           </div>
           <div id="hero-carbon" style="position:absolute; inset:0; display:none; padding:24px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-              <div class="tag" style="color:var(--accent)">Grid intensity · 24h · gCO₂e/kWh</div>
-              <div class="tag">4 regions</div>
+              <div class="tag" style="color:var(--accent)">Latency budget · 24h · p95 ms</div>
+              <div class="tag">4 services</div>
             </div>
             <div id="hero-bars" style="display:flex; gap:4px; height:calc(100% - 60px); align-items:flex-end;"></div>
             <div style="display:flex; justify-content:space-between; margin-top:8px; font-family:var(--mono); font-size:10px; color:var(--muted); text-transform:uppercase;"><span>00:00</span><span>12:00</span><span>24:00</span></div>
           </div>
         </div>
         <div class="sim-head" style="border-top:1px solid var(--line); border-bottom:0;">
-          <span id="hero-foot-a">12,000 agents · 4 cohorts</span>
+          <span id="hero-foot-a">412 nodes · 18 clusters</span>
           <span><span class="dot" style="background:var(--ok)"></span>stable</span>
         </div>
       </div>
@@ -110,9 +110,9 @@
 <header class="hero" data-variant="editorial" style="display:none; padding: 96px 0 96px;">
   <div class="wrap">
     <div class="tag" style="margin-bottom:48px">ESTABLISHED 2018 · OTTAWA / CALGARY</div>
-    <h1 style="max-width: 18ch; margin-bottom: 40px;">Intelligence, <em>federated</em>. Compute, accountable. Simulation, at scale.</h1>
+    <h1 style="max-width: 18ch; margin-bottom: 40px;">Kubernetes, <em>operable</em>. Platforms, accountable. Delivery, at scale.</h1>
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items:end; border-top:1px solid var(--line); padding-top: 40px;">
-      <p class="lead" style="max-width: 56ch; font-size: 18px;">BitQubic is distributed-intelligence infrastructure for organizations that need to keep their data and compute on their own premises. Three products that work together or alone: agentic simulations, federated learning, and carbon-aware scheduling.</p>
+      <p class="lead" style="max-width: 56ch; font-size: 18px;">BitQubic builds cloud native infrastructure for organizations that need reliable Kubernetes, repeatable delivery, and production operations across cloud, on-premises, edge, and air-gapped environments.</p>
       <div style="display:flex; gap:12px; justify-content:flex-end;">
         <a href="contact.html" class="btn btn-primary">Book a demo <span class="arr">→</span></a>
         <a href="platform.html" class="btn">Platform brief</a>
@@ -131,26 +131,26 @@
       <div class="tag">01 · Products</div>
       <div>
         <h2 class="section-title">Three products. One substrate. Deployed together or alone.</h2>
-        <p class="section-sub">Each product works on its own. Together they form a single platform for organizations that run AI across different regions, hardware, and regulatory environments.</p>
+        <p class="section-sub">Each product works on its own. Together they form a single platform for organizations that run cloud native workloads across regions, clouds, hardware, and regulated environments.</p>
       </div>
     </div>
 
     <div class="grid grid-3">
-      <!-- Agentic sims -->
-      <a href="simulations.html" class="cell" style="display:block; text-decoration:none;">
-        <div class="tag" style="color:var(--accent)">Pillar · Agentic simulations</div>
-        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Rehearse futures before they cost you anything.</h3>
-        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Run up to a million simulated agents in a virtual world. Replay any run exactly, branch on any decision, and trace every outcome back to its cause.</p>
+      <!-- Platform engineering -->
+      <a href="platform-engineering.html" class="cell" style="display:block; text-decoration:none;">
+        <div class="tag" style="color:var(--accent)">Pillar · Platform engineering</div>
+        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Give teams a paved road to production.</h3>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Design internal developer platforms with golden paths for build, deploy, observe, secure, and recover. Reduce ticket flow without hiding operational detail.</p>
         <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); position:relative;">
           <canvas id="card-sim-1" style="position:absolute; inset:0;"></canvas>
         </div>
       </a>
 
-      <!-- Federated -->
-      <a href="federated.html" class="cell" style="display:block; text-decoration:none;">
-        <div class="tag">Product · Federated learning</div>
-        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Train without moving the data.</h3>
-        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Train one model across many organizations without raw data ever leaving any site. Privacy safeguards built in, and resilient when sites go offline.</p>
+      <!-- Modernization -->
+      <a href="cloud-modernization.html" class="cell" style="display:block; text-decoration:none;">
+        <div class="tag">Product · Cloud modernization</div>
+        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Move workloads without losing control.</h3>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Containerize legacy services, split risk into release waves, and keep identity, networking, data, and compliance rules explicit throughout the migration.</p>
         <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); padding: 20px;">
           <svg viewBox="0 0 400 120" width="100%" height="100%" style="overflow:visible;">
             <g fill="none" stroke="var(--line-2)" stroke-width="1">
@@ -178,11 +178,11 @@
         </div>
       </a>
 
-      <!-- Carbon -->
-      <a href="orchestration.html" class="cell" style="display:block; text-decoration:none;">
-        <div class="tag">Product · Carbon orchestration</div>
-        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Schedule against the grid, not the clock.</h3>
-        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">A scheduler for Kubernetes clusters that reads live electricity-grid carbon data and shifts jobs to cleaner hours. Service commitments preserved; emissions measured per run.</p>
+      <!-- Orchestration -->
+      <a href="kubernetes-orchestration.html" class="cell" style="display:block; text-decoration:none;">
+        <div class="tag">Product · Kubernetes orchestration</div>
+        <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Schedule against policy, capacity, and SLOs.</h3>
+        <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">A Kubernetes control layer for placement, scaling, rollout, and recovery. Service commitments stay visible; operational evidence is captured per release.</p>
         <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); padding: 16px 20px; display:flex; align-items:flex-end; gap: 4px;">
           <!-- mini bar chart -->
           <script>/* bars rendered by inline JS at bottom */</script>
@@ -197,37 +197,37 @@
 <section class="section" style="padding: 0;">
   <div class="wrap">
     <div class="metrics">
-      <div class="metric"><div class="metric-num">412</div><div class="metric-lbl">Active federation nodes</div></div>
-      <div class="metric"><div class="metric-num">18.4<span style="color:var(--muted); font-size: 18px;">M tCO₂e</span></div><div class="metric-lbl">Deferred via carbon-aware routing</div></div>
-      <div class="metric"><div class="metric-num">1.2B</div><div class="metric-lbl">Agent-steps simulated / wk</div></div>
-      <div class="metric"><div class="metric-num">99.98%</div><div class="metric-lbl">Aggregation round SLO, 2025</div></div>
+      <div class="metric"><div class="metric-num">412</div><div class="metric-lbl">Kubernetes nodes managed</div></div>
+      <div class="metric"><div class="metric-num">18</div><div class="metric-lbl">Regions and sites connected</div></div>
+      <div class="metric"><div class="metric-num">1.2B</div><div class="metric-lbl">Telemetry events processed / wk</div></div>
+      <div class="metric"><div class="metric-num">99.98%</div><div class="metric-lbl">Platform control-plane SLO, 2025</div></div>
     </div>
   </div>
 </section>
 
-<!-- LEAD: AGENTIC SIMS (priority pillar) -->
+<!-- LEAD: PLATFORM ENGINEERING (priority pillar) -->
 <section class="section">
   <div class="wrap">
     <div class="section-head">
       <div class="tag">02 · Lead product</div>
       <div>
-        <h2 class="section-title">Agentic simulation is the decision layer we built the company around.</h2>
-        <p class="section-sub">Regulators, banks, and research teams all share one question: what happens when this policy, drug, or strategy meets the real world? We help them ask it safely, thousands of times over, before anyone commits.</p>
+        <h2 class="section-title">Platform engineering is the operating model we build around.</h2>
+        <p class="section-sub">Infrastructure teams all share one problem: how do you let product teams move faster without turning production into a maze? We help them standardize delivery, governance, and operations without flattening every workload into the same shape.</p>
       </div>
     </div>
 
     <div style="display:grid; grid-template-columns: 1.15fr 1fr; gap: 0; border: 1px solid var(--line);">
       <div style="padding: 40px; border-right: 1px solid var(--line);">
-        <div class="tag" style="margin-bottom: 20px;">Scenario · macroprudential stress, run #81,402</div>
+        <div class="tag" style="margin-bottom: 20px;">Scenario · production rollout, release #81,402</div>
         <div style="font-family: var(--mono); font-size: 13px; line-height:1.7; color: var(--fg-dim);">
-          <div><span style="color:var(--accent)">▸</span> Initialize 12,000 heterogeneous agents across 4 cohorts</div>
-          <div><span style="color:var(--accent)">▸</span> Seed with Basel-IV stressed balance sheets (Q1 '26 snapshot)</div>
-          <div><span style="color:var(--accent)">▸</span> Run 90-day horizon · 400 parallel counterfactual branches</div>
+          <div><span style="color:var(--accent)">▸</span> Validate manifests across 18 clusters and 4 environments</div>
+          <div><span style="color:var(--accent)">▸</span> Apply OPA policy set · network, secrets, capacity, and identity</div>
+          <div><span style="color:var(--accent)">▸</span> Run canary window · 400 parallel health checks</div>
           <div style="color:var(--muted); margin-top:12px;">... stepping ...</div>
-          <div style="margin-top:4px;">t+14d  · liquidity pressure detected in cohort 3 (22 agents)</div>
-          <div>t+31d  · contagion path [3→1→2] · p = 0.34</div>
-          <div>t+62d  · 4 agents insolvent · systemic risk = 0.08</div>
-          <div style="color: var(--accent); margin-top:12px;">✓ run complete · 4.6× faster than baseline · $0.71 compute</div>
+          <div style="margin-top:4px;">t+14m  · p95 latency rising in prod-west (22 pods)</div>
+          <div>t+31m  · rollback path [canary→stable] · error budget safe</div>
+          <div>t+62m  · 4 workloads rescheduled · saturation risk = 0.08</div>
+          <div style="color: var(--accent); margin-top:12px;">✓ rollout complete · 4.6× faster than baseline · full audit trail</div>
         </div>
       </div>
       <div style="padding: 0; min-height: 380px; position:relative;">
@@ -237,19 +237,19 @@
 
     <div class="grid grid-3" style="margin-top: 48px;">
       <div class="cell">
-        <div class="tag">Deterministic</div>
-        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Replay any run, bit-for-bit</h4>
-        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Every run is reproducible: same starting state, same result, down to each agent's decisions. Logs are signed and tamper-evident.</p>
+        <div class="tag">Repeatable</div>
+        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Rebuild any environment</h4>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Every cluster state is reproducible from source-controlled manifests, policy, and versioned platform components. Logs are signed and tamper-evident.</p>
       </div>
       <div class="cell">
-        <div class="tag">Counterfactual</div>
-        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Branch at any step</h4>
-        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Pause a simulation at any point, change a single input, and keep both versions running side by side. Compare them to see exactly what that change caused.</p>
+        <div class="tag">Progressive</div>
+        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Release in controlled waves</h4>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Move from dev to production with canaries, blue-green rollouts, health gates, and automatic rollback tied to SLO signals.</p>
       </div>
       <div class="cell">
-        <div class="tag">Attributable</div>
-        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Explain every outcome</h4>
-        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Break any outcome down into the contributions of individual agents and their interactions. Ship decisions with an audit trail a regulator will accept.</p>
+        <div class="tag">Observable</div>
+        <h4 style="font-size:17px; font-weight:500; margin: 10px 0; letter-spacing:-0.01em;">Explain every incident</h4>
+        <p style="color:var(--fg-dim); font-size:14px; margin:0;">Connect metrics, traces, logs, deploy events, and policy decisions so teams can understand what changed and why production behaved differently.</p>
       </div>
     </div>
   </div>
@@ -261,7 +261,7 @@
     <div class="section-head">
       <div class="tag">03 · Architecture</div>
       <div>
-        <h2 class="section-title">One control plane. Three intelligence primitives. Your infrastructure.</h2>
+        <h2 class="section-title">One control plane. Three cloud native primitives. Your infrastructure.</h2>
       </div>
     </div>
 
@@ -273,19 +273,19 @@
       </div>
       <div class="grid grid-3" style="border:0;">
         <div class="cell cell-surface" style="border-right: 1px solid var(--line);">
-          <div class="tag" style="color:var(--accent)">Simulate</div>
-          <div style="font-size:15px; margin-top:10px;">Agentic runtime</div>
-          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Software kit for Python and Rust. Works with OpenAI, Anthropic, or locally-hosted models.</div>
+          <div class="tag" style="color:var(--accent)">Build</div>
+          <div style="font-size:15px; margin-top:10px;">Platform engineering</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Golden paths for service templates, CI/CD, secrets, policy, and production readiness.</div>
         </div>
         <div class="cell cell-surface" style="border-right: 1px solid var(--line);">
-          <div class="tag">Learn</div>
-          <div style="font-size:15px; margin-top:10px;">Federated trainer</div>
-          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Raw data stays on each site. Supports PyTorch and JAX with built-in privacy and resilience.</div>
+          <div class="tag">Modernize</div>
+          <div style="font-size:15px; margin-top:10px;">Migration factory</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Containerization, service decomposition, network policy, data movement, and release waves.</div>
         </div>
         <div class="cell cell-surface">
-          <div class="tag">Schedule</div>
-          <div style="font-size:15px; margin-top:10px;">Carbon scheduler</div>
-          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Kubernetes add-on that reads grid data from Electricity Maps, WattTime, or your own sensors.</div>
+          <div class="tag">Operate</div>
+          <div style="font-size:15px; margin-top:10px;">Kubernetes control layer</div>
+          <div style="color:var(--fg-dim); font-size:13px; margin-top:6px;">Placement, autoscaling, rollout automation, incident signals, and cost-aware scheduling.</div>
         </div>
       </div>
       <div style="display:grid; grid-template-columns: 180px 1fr 180px; border-top: 1px solid var(--line);">
@@ -332,13 +332,13 @@
     carbon:    document.getElementById('hero-carbon'),
   };
   const footLabels = {
-    agents:    '12,000 agents · 4 cohorts',
-    federated: '6 / 6 participants · drift 0.024',
-    carbon:    '4 regions · marginal intensity',
+    agents:    '412 nodes · 18 clusters',
+    federated: '6 / 6 environments · config drift 0.024',
+    carbon:    '4 services · p95 latency',
   };
   const runLabels = {
-    agents: 'run #81,402',
-    federated: 'round #1,412',
+    agents: 'release #81,402',
+    federated: 'sync #1,412',
     carbon: 'window t−24h',
   };
   tabs.forEach(t => {
@@ -352,7 +352,7 @@
     t.addEventListener('click', act);
     t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } });
   });
-  // populate carbon bars
+  // populate operations bars
   const hb = document.getElementById('hero-bars');
   if (hb) {
     const vals = [34,42,68,52,44,38,46,58,72,88,94,71,54,47,52,66,78,64,50,42,38,46,58,48];
@@ -374,7 +374,7 @@
       BQSwarm.init(document.getElementById('sim-big-canvas'), { count: 220 });
     }
 
-    // Mini bar chart for carbon card — seeded so it looks real
+    // Mini bar chart for orchestration card - seeded so it looks real
     const bars = document.getElementById('bars-preview');
     if (bars) {
       const vals = [34, 42, 68, 52, 44, 38, 46, 58, 72, 88, 94, 71, 54, 47, 52, 66, 78, 64, 50, 42, 38, 46, 58, 48];
