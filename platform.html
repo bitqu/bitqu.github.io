@@ -12,7 +12,7 @@
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     "theme": "dark",
     "accent": "lime",
-    "hero": "swarm"
+    "hero": "topology"
   }/*EDITMODE-END*/;
 </script>
 </head>
@@ -44,7 +44,7 @@
       <!-- Layer 1 -->
       <div style="display:grid; grid-template-columns: 200px 1fr 1fr 1fr; border-bottom: 1px solid var(--line);">
         <div style="padding: 24px; border-right: 1px solid var(--line); background: var(--surface);"><div class="tag" style="color:var(--accent)">Fabric</div><div style="font-size: 15px; margin-top: 8px;">Control plane</div></div>
-        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Policy</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Define rules about who can deploy, where workloads may run, and which controls are mandatory. Policy language is compatible with Open Policy Agent (OPA).</div></div>
+        <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Policy</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Define rules about who can deploy, where workloads may run, and which controls are mandatory. Policy language is compatible with OPA.</div></div>
         <div style="padding: 24px; border-right: 1px solid var(--line);"><div class="tag">Identity</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Every workload, pipeline, and operator has a verified identity before it can act. Supports workload identity, signed images, and secretless service access.</div></div>
         <div style="padding: 24px;"><div class="tag">Audit</div><div style="color:var(--fg-dim); font-size:13.5px; margin-top:8px;">Every release and platform decision produces a signed, tamper-evident record operations and compliance teams can verify independently.</div></div>
       </div>

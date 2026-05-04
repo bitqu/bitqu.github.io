@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/shared.css?v=8" />
-<script>const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"lime","hero":"swarm"}/*EDITMODE-END*/;</script>
+<script>const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"dark","accent":"lime","hero":"topology"}/*EDITMODE-END*/;</script>
 </head>
 <body>
 <div id="nav-mount"></div>
@@ -21,10 +21,10 @@
         <h1 style="font-size: clamp(40px, 5.2vw, 68px); letter-spacing: -0.025em; line-height:1.02; margin: 0 0 24px; font-weight: 500;">Platform engineering.</h1>
         <p style="color: var(--fg-dim); font-size: 18px; max-width: 54ch; line-height: 1.5; margin: 0;">Give every team a clear path from commit to production. Standardize the platform pieces without turning Kubernetes into a black box.</p>
       </div>
-      <div class="sim-frame" style="min-height: 340px;">
-        <div class="sim-head"><span>platform.graph.live</span><span>412 nodes</span></div>
-        <div class="sim-body"><canvas id="sim"></canvas></div>
-        <div class="sim-foot"><span>release #81,402 · stable</span><span><span class="dot" style="background:var(--ok)"></span>62 fps</span></div>
+      <div class="viz-frame" style="min-height: 340px;">
+        <div class="viz-head"><span>platform.graph.live</span><span>412 nodes</span></div>
+        <div class="viz-body"><canvas id="topology-detail"></canvas></div>
+        <div class="viz-foot"><span>release #81,402 · stable</span><span><span class="dot" style="background:var(--ok)"></span>62 fps</span></div>
       </div>
     </div>
   </div>
@@ -119,7 +119,7 @@ report = release.audit_trail().sign()
 <div id="foot-mount"></div>
 <div id="tweaks-mount"></div>
 <script src="assets/shared.js?v=14"></script>
-<script src="assets/swarm.js?v=7"></script>
-<script>window.addEventListener('load', () => { BQSwarm.init(document.getElementById('sim'), { count: 200 }); });</script>
+<script src="assets/topology.js?v=7"></script>
+<script>window.addEventListener('load', () => { BQTopology.init(document.getElementById('topology-detail'), { count: 200 }); });</script>
 </body>
 </html>

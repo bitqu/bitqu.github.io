@@ -13,15 +13,15 @@
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     "theme": "dark",
     "accent": "lime",
-    "hero": "swarm"
+    "hero": "topology"
   }/*EDITMODE-END*/;
 </script>
 </head>
 <body data-has-hero="true">
 <div id="nav-mount"></div>
 
-<!-- HERO: swarm variant -->
-<header class="hero" data-variant="swarm">
+<!-- HERO: topology variant -->
+<header class="hero" data-variant="topology">
   <div class="wrap hero-grid">
     <div>
       <h1>Infrastructure for <em>cloud native</em> systems.</h1>
@@ -37,18 +37,18 @@
       </div>
     </div>
     <div>
-      <div class="sim-frame">
-        <div class="sim-head">
+      <div class="viz-frame">
+        <div class="viz-head">
           <div class="tabs" id="hero-tabs">
-            <span class="tab on" data-view="agents" role="button" tabindex="0">cluster.topology</span>
-            <span class="tab" data-view="federated" role="button" tabindex="0">gitops.deploy</span>
-            <span class="tab" data-view="carbon" role="button" tabindex="0">ops.slo</span>
+            <span class="tab on" data-view="topology" role="button" tabindex="0">cluster.topology</span>
+            <span class="tab" data-view="deploy" role="button" tabindex="0">gitops.deploy</span>
+            <span class="tab" data-view="slo" role="button" tabindex="0">ops.slo</span>
           </div>
           <span id="hero-run-label">release #81,402</span>
         </div>
-        <div class="sim-body">
-          <canvas id="hero-canvas"></canvas>
-          <div id="hero-federated" style="position:absolute; inset:0; display:none; padding:24px;">
+        <div class="viz-body">
+          <canvas id="hero-topology"></canvas>
+          <div id="hero-deploy" style="position:absolute; inset:0; display:none; padding:24px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
               <div class="tag" style="color:var(--accent)">Release 1,412 · 6 environments</div>
               <div class="tag">policy 24 / 24</div>
@@ -88,7 +88,7 @@
               </g>
             </svg>
           </div>
-          <div id="hero-carbon" style="position:absolute; inset:0; display:none; padding:24px;">
+          <div id="hero-slo" style="position:absolute; inset:0; display:none; padding:24px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
               <div class="tag" style="color:var(--accent)">Latency budget · 24h · p95 ms</div>
               <div class="tag">4 services</div>
@@ -97,7 +97,7 @@
             <div style="display:flex; justify-content:space-between; margin-top:8px; font-family:var(--mono); font-size:10px; color:var(--muted); text-transform:uppercase;"><span>00:00</span><span>12:00</span><span>24:00</span></div>
           </div>
         </div>
-        <div class="sim-head" style="border-top:1px solid var(--line); border-bottom:0;">
+        <div class="viz-head" style="border-top:1px solid var(--line); border-bottom:0;">
           <span id="hero-foot-a">412 nodes · 18 clusters</span>
           <span><span class="dot" style="background:var(--ok)"></span>stable</span>
         </div>
@@ -142,7 +142,7 @@
         <h3 style="font-size: 26px; letter-spacing:-0.015em; font-weight: 500; margin: 28px 0 12px; line-height:1.1;">Give teams a paved road to production.</h3>
         <p style="color:var(--fg-dim); font-size: 14.5px; line-height:1.55; margin:0 0 28px;">Design internal developer platforms with golden paths for build, deploy, observe, secure, and recover. Reduce ticket flow without hiding operational detail.</p>
         <div style="height: 160px; margin: 0 -28px -28px; border-top:1px solid var(--line); position:relative;">
-          <canvas id="card-sim-1" style="position:absolute; inset:0;"></canvas>
+          <canvas id="card-topology-1" style="position:absolute; inset:0;"></canvas>
         </div>
       </a>
 
@@ -211,7 +211,7 @@
     <div class="section-head">
       <div class="tag">02 · Lead product</div>
       <div>
-        <h2 class="section-title">Platform engineering is the operating model we build around.</h2>
+        <h2 class="section-title">Platform engineering is the operating approach we build around.</h2>
         <p class="section-sub">Infrastructure teams all share one problem: how do you let product teams move faster without turning production into a maze? We help them standardize delivery, governance, and operations without flattening every workload into the same shape.</p>
       </div>
     </div>
@@ -231,7 +231,7 @@
         </div>
       </div>
       <div style="padding: 0; min-height: 380px; position:relative;">
-        <canvas id="sim-big-canvas" style="position:absolute; inset:0; width:100%; height:100%;"></canvas>
+        <canvas id="topology-big-canvas" style="position:absolute; inset:0; width:100%; height:100%;"></canvas>
       </div>
     </div>
 
@@ -312,11 +312,11 @@
 <div id="tweaks-mount"></div>
 
 <script src="assets/shared.js?v=14"></script>
-<script src="assets/swarm.js?v=7"></script>
+<script src="assets/topology.js?v=7"></script>
 <script>
   // Hero variant switch
   function applyHero() {
-    const v = document.documentElement.getAttribute('data-hero') || 'swarm';
+    const v = document.documentElement.getAttribute('data-hero') || 'topology';
     document.querySelectorAll('.hero[data-variant]').forEach(el => {
       el.style.display = (el.dataset.variant === v) ? '' : 'none';
     });
@@ -327,25 +327,25 @@
   // Hero tab switcher
   const tabs = document.querySelectorAll('#hero-tabs .tab');
   const views = {
-    agents:    document.getElementById('hero-canvas'),
-    federated: document.getElementById('hero-federated'),
-    carbon:    document.getElementById('hero-carbon'),
+    topology:    document.getElementById('hero-topology'),
+    deploy: document.getElementById('hero-deploy'),
+    slo:    document.getElementById('hero-slo'),
   };
   const footLabels = {
-    agents:    '412 nodes · 18 clusters',
-    federated: '6 / 6 environments · config drift 0.024',
-    carbon:    '4 services · p95 latency',
+    topology:    '412 nodes · 18 clusters',
+    deploy: '6 / 6 environments · config drift 0.024',
+    slo:    '4 services · p95 latency',
   };
   const runLabels = {
-    agents: 'release #81,402',
-    federated: 'sync #1,412',
-    carbon: 'window t−24h',
+    topology: 'release #81,402',
+    deploy: 'sync #1,412',
+    slo: 'window t−24h',
   };
   tabs.forEach(t => {
     const act = () => {
       const v = t.dataset.view;
       tabs.forEach(x => x.classList.toggle('on', x === t));
-      Object.entries(views).forEach(([k, el]) => { if (el) el.style.display = (k === v ? (k === 'agents' ? 'block' : 'block') : 'none'); });
+      Object.entries(views).forEach(([k, el]) => { if (el) el.style.display = (k === v ? 'block' : 'none'); });
       document.getElementById('hero-foot-a').textContent = footLabels[v];
       document.getElementById('hero-run-label').textContent = runLabels[v];
     };
@@ -362,16 +362,16 @@
     }).join('');
   }
 
-  // Swarm sims
+  // Topology views
   window.addEventListener('load', () => {
-    if (document.getElementById('hero-canvas')) {
-      BQSwarm.init(document.getElementById('hero-canvas'), { count: 180 });
+    if (document.getElementById('hero-topology')) {
+      BQTopology.init(document.getElementById('hero-topology'), { count: 180 });
     }
-    if (document.getElementById('card-sim-1')) {
-      BQSwarm.init(document.getElementById('card-sim-1'), { count: 80 });
+    if (document.getElementById('card-topology-1')) {
+      BQTopology.init(document.getElementById('card-topology-1'), { count: 80 });
     }
-    if (document.getElementById('sim-big-canvas')) {
-      BQSwarm.init(document.getElementById('sim-big-canvas'), { count: 220 });
+    if (document.getElementById('topology-big-canvas')) {
+      BQTopology.init(document.getElementById('topology-big-canvas'), { count: 220 });
     }
 
     // Mini bar chart for orchestration card - seeded so it looks real

@@ -21,7 +21,7 @@ Then open http://localhost:8000/.
 | `index.html`, `platform.html`, `platform-engineering.html`, `cloud-modernization.html`, `kubernetes-orchestration.html`, `contact.html` | Published pages |
 | `assets/shared.css` | Design tokens, theme/accent variants, component styles |
 | `assets/shared.js` | Nav, footer, ticker, and tweaks-panel injection; theme persistence |
-| `assets/swarm.js` | Canvas-based cloud topology visualization |
+| `assets/topology.js` | Canvas-based cloud topology visualization |
 
 ## Editing
 
@@ -29,7 +29,7 @@ Then open http://localhost:8000/.
 - **Theme, accent, hero variant** — driven by `data-theme` / `data-accent` / `data-hero` attributes on `<html>`, persisted in `localStorage` (`bitqubic.settings.v1`). Extend the corresponding blocks in `assets/shared.css` to add new variants.
 - **Asset cache busting** — bump the `?v=` query string on `<link>` / `<script>` tags in every HTML file after editing files in `assets/`.
 
-See [CLAUDE.md](CLAUDE.md) for deeper architectural notes.
+See [PROJECT_NOTES.md](PROJECT_NOTES.md) for deeper architectural notes.
 
 ## Deployment
 

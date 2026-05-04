@@ -5,9 +5,9 @@
   function loadSettings() {
     try {
       const raw = localStorage.getItem(STORAGE);
-      if (!raw) return { theme: 'dark', accent: 'lime', hero: 'swarm' };
-      return Object.assign({ theme: 'dark', accent: 'lime', hero: 'swarm' }, JSON.parse(raw));
-    } catch (e) { return { theme: 'dark', accent: 'lime', hero: 'swarm' }; }
+      if (!raw) return { theme: 'dark', accent: 'lime', hero: 'topology' };
+      return Object.assign({ theme: 'dark', accent: 'lime', hero: 'topology' }, JSON.parse(raw));
+    } catch (e) { return { theme: 'dark', accent: 'lime', hero: 'topology' }; }
   }
 
   function saveSettings(s) {
@@ -162,7 +162,7 @@
         ${hasHero ? `
         <div class="tweaks-row"><span>Hero</span>
           <div class="tweaks-btns">
-            <button class="tw ${s.hero==='swarm'?'on':''}" data-k="hero" data-v="swarm">Swarm</button>
+            <button class="tw ${s.hero==='topology'?'on':''}" data-k="hero" data-v="topology">Topology</button>
             <button class="tw ${s.hero==='editorial'?'on':''}" data-k="hero" data-v="editorial">Editorial</button>
           </div>
         </div>` : ''}
