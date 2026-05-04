@@ -1,6 +1,6 @@
 # bitqu.github.io
 
-Marketing site for **BitQubic** — distributed intelligence infrastructure for federated learning, carbon-aware orchestration, and agentic simulation. Published at [bitqu.github.io](https://bitqu.github.io) via GitHub Pages.
+Marketing site for **BitQubic** — cloud native infrastructure for platform engineering, cloud modernization, and Kubernetes orchestration. Published at [bitqu.github.io](https://bitqu.github.io) via GitHub Pages.
 
 ## Stack
 
@@ -21,7 +21,7 @@ Then open http://localhost:8000/.
 | `index.html`, `platform.html`, `platform-engineering.html`, `cloud-modernization.html`, `kubernetes-orchestration.html`, `contact.html` | Published pages |
 | `assets/shared.css` | Design tokens, theme/accent variants, component styles |
 | `assets/shared.js` | Nav, footer, ticker, and tweaks-panel injection; theme persistence |
-| `assets/swarm.js` | Canvas-based agent simulation visualization |
+| `assets/swarm.js` | Canvas-based cloud topology visualization |
 
 ## Editing
 
