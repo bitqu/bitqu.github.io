@@ -1,7 +1,5 @@
-// Agentic simulation visualization — reads as "heterogeneous agents making decisions
-// in a scenario world." Grid-based environment with cohort-tagged agents that pick
-// directions at decision points, leaving decision-trail evidence. Directly maps to
-// the business: deterministic replay, branching, heterogeneous populations.
+// Cloud topology visualization. Grid-based environment with workload markers
+// moving between cluster targets and leaving operational activity trails.
 (function () {
   function init(canvas, opts) {
     opts = opts || {};
@@ -34,45 +32,41 @@
       return (seed & 0x7fffffff) / 0x7fffffff;
     };
 
-    // Objectives: fixed cells agents try to reach (one per cohort)
-    const OBJ_COUNT = 4;
-    let objectives = [];
-    function placeObjectives() {
-      objectives = [];
-      for (let i = 0; i < OBJ_COUNT; i++) {
-        objectives.push({
+    const TARGET_COUNT = 4;
+    let targets = [];
+    function placeTargets() {
+      targets = [];
+      for (let i = 0; i < TARGET_COUNT; i++) {
+        targets.push({
           c: Math.floor((0.15 + (i * 0.22) + rnd() * 0.1) * COLS) % COLS,
           r: Math.floor((0.2 + ((i % 2) * 0.5) + rnd() * 0.15) * ROWS) % ROWS,
-          cohort: i,
+          group: i,
         });
       }
     }
-    placeObjectives();
+    placeTargets();
 
-    const agents = [];
-    function spawn(a) {
-      // Spawn on a left/right edge, assign cohort
-      const cohort = Math.floor(rnd() * 4);
+    const workloads = [];
+    function spawn(workload) {
+      const group = Math.floor(rnd() * 4);
       const side = rnd() < 0.5 ? 0 : COLS - 1;
-      a.c = side;
-      a.r = Math.floor(rnd() * ROWS);
-      a.cohort = cohort;
-      a.t = 0;               // step counter
-      a.nextDecide = 0;
-      a.dir = { dc: side === 0 ? 1 : -1, dr: 0 };
-      a.life = 0;
-      a.maxLife = 120 + Math.floor(rnd() * 80);
+      workload.c = side;
+      workload.r = Math.floor(rnd() * ROWS);
+      workload.group = group;
+      workload.t = 0;
+      workload.dir = { dc: side === 0 ? 1 : -1, dr: 0 };
+      workload.life = 0;
+      workload.maxLife = 120 + Math.floor(rnd() * 80);
     }
     for (let i = 0; i < N; i++) {
-      const a = { c: 0, r: 0, cohort: 0, dir: { dc: 1, dr: 0 }, t: 0, nextDecide: 0, life: 0, maxLife: 100 };
-      spawn(a);
-      a.c = Math.floor(rnd() * COLS);
-      a.r = Math.floor(rnd() * ROWS);
-      agents.push(a);
+      const workload = { c: 0, r: 0, group: 0, dir: { dc: 1, dr: 0 }, t: 0, life: 0, maxLife: 100 };
+      spawn(workload);
+      workload.c = Math.floor(rnd() * COLS);
+      workload.r = Math.floor(rnd() * ROWS);
+      workloads.push(workload);
     }
 
-    // Trail grid: accumulates decision evidence per cohort
-    const trails = new Float32Array(COLS * ROWS * 4); // 4 cohorts
+    const trails = new Float32Array(COLS * ROWS * 4);
     function trailIdx(c, r, k) { return ((r * COLS) + c) * 4 + k; }
 
     const getColors = () => {
@@ -94,15 +88,13 @@
       // Decay trails
       for (let i = 0; i < trails.length; i++) trails[i] *= 0.975;
 
-      for (let i = 0; i < agents.length; i++) {
-        const a = agents[i];
-        const obj = objectives[a.cohort];
+      for (let i = 0; i < workloads.length; i++) {
+        const workload = workloads[i];
+        const target = targets[workload.group];
 
-        // Decide: greedy step toward objective with small stochastic branching
-        const dc = Math.sign(obj.c - a.c);
-        const dr = Math.sign(obj.r - a.r);
-        // Heterogeneity: cohorts weigh horizontal vs vertical differently
-        const bias = [0.6, 0.4, 0.5, 0.3][a.cohort];
+        const dc = Math.sign(target.c - workload.c);
+        const dr = Math.sign(target.r - workload.r);
+        const bias = [0.6, 0.4, 0.5, 0.3][workload.group];
         let pickH = rnd() < bias;
         if (dc === 0) pickH = false;
         if (dr === 0) pickH = true;
@@ -110,32 +102,29 @@
         let ndc = 0, ndr = 0;
         if (pickH) ndc = dc; else ndr = dr;
 
-        // Occasional exploration (the "counterfactual branch" visual)
         if (rnd() < 0.08) {
           if (pickH) ndr = rnd() < 0.5 ? -1 : 1;
           else ndc = rnd() < 0.5 ? -1 : 1;
           if (pickH) ndc = 0; else ndr = 0;
         }
 
-        a.dir = { dc: ndc, dr: ndr };
-        a.c = Math.max(0, Math.min(COLS - 1, a.c + ndc));
-        a.r = Math.max(0, Math.min(ROWS - 1, a.r + ndr));
+        workload.dir = { dc: ndc, dr: ndr };
+        workload.c = Math.max(0, Math.min(COLS - 1, workload.c + ndc));
+        workload.r = Math.max(0, Math.min(ROWS - 1, workload.r + ndr));
 
-        // Deposit trail
-        trails[trailIdx(a.c, a.r, a.cohort)] = Math.min(1, trails[trailIdx(a.c, a.r, a.cohort)] + 0.55);
+        trails[trailIdx(workload.c, workload.r, workload.group)] = Math.min(1, trails[trailIdx(workload.c, workload.r, workload.group)] + 0.55);
 
-        a.life++;
-        // Arrived? → commit stronger trail at objective and respawn
-        if (a.c === obj.c && a.r === obj.r) {
+        workload.life++;
+        if (workload.c === target.c && workload.r === target.r) {
           for (let k = -1; k <= 1; k++) for (let l = -1; l <= 1; l++) {
-            const cc = obj.c + k, rr = obj.r + l;
+            const cc = target.c + k, rr = target.r + l;
             if (cc >= 0 && cc < COLS && rr >= 0 && rr < ROWS) {
-              trails[trailIdx(cc, rr, a.cohort)] = Math.min(1, trails[trailIdx(cc, rr, a.cohort)] + 0.3);
+              trails[trailIdx(cc, rr, workload.group)] = Math.min(1, trails[trailIdx(cc, rr, workload.group)] + 0.3);
             }
           }
-          spawn(a);
-        } else if (a.life > a.maxLife) {
-          spawn(a);
+          spawn(workload);
+        } else if (workload.life > workload.maxLife) {
+          spawn(workload);
         }
       }
     }
@@ -160,7 +149,7 @@
       }
       ctx.stroke();
 
-      // Draw trails (decision evidence)
+      // Draw activity trails
       for (let r = 0; r < ROWS; r++) {
         for (let c = 0; c < COLS; c++) {
           for (let k = 0; k < 4; k++) {
@@ -173,11 +162,11 @@
         }
       }
 
-      // Draw objectives: small square brackets
-      for (let i = 0; i < objectives.length; i++) {
-        const o = objectives[i];
+      // Draw targets: small square brackets
+      for (let i = 0; i < targets.length; i++) {
+        const o = targets[i];
         const x = o.c * CELL, y = o.r * CELL;
-        ctx.strokeStyle = colors[o.cohort];
+        ctx.strokeStyle = colors[o.group];
         ctx.lineWidth = 1.5;
         const s = CELL;
         ctx.beginPath();
@@ -189,22 +178,22 @@
         ctx.stroke();
       }
 
-      // Draw agents as small squares (not circles → not organic)
-      for (let i = 0; i < agents.length; i++) {
-        const a = agents[i];
-        const x = a.c * CELL + CELL / 2;
-        const y = a.r * CELL + CELL / 2;
-        const col = colors[a.cohort];
+      // Draw workloads as small squares
+      for (let i = 0; i < workloads.length; i++) {
+        const workload = workloads[i];
+        const x = workload.c * CELL + CELL / 2;
+        const y = workload.r * CELL + CELL / 2;
+        const col = colors[workload.group];
         // direction tick
         ctx.strokeStyle = hexA(col, 0.7);
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(x, y);
-        ctx.lineTo(x + a.dir.dc * (CELL * 0.55), y + a.dir.dr * (CELL * 0.55));
+        ctx.lineTo(x + workload.dir.dc * (CELL * 0.55), y + workload.dir.dr * (CELL * 0.55));
         ctx.stroke();
         // body
-          ctx.fillStyle = hexA(col, 0.55);
-        const sz = a.cohort === 0 ? 3 : 2.5;
+        ctx.fillStyle = hexA(col, 0.55);
+        const sz = workload.group === 0 ? 3 : 2.5;
         ctx.fillRect(x - sz / 2, y - sz / 2, sz, sz);
       }
     }
@@ -217,7 +206,7 @@
       if (!lastStep) lastStep = now || 0;
       if ((now || 0) - lastStep > 2000) { step(); lastStep = now || 0; }
       draw();
-      if (t % 3000 === 0) placeObjectives();
+      if (t % 3000 === 0) placeTargets();
       raf = requestAnimationFrame(tick);
     }
 
@@ -244,5 +233,5 @@
     return { destroy() { cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); } };
   }
 
-  window.BQSwarm = { init };
+  window.BQTopology = { init };
 })();

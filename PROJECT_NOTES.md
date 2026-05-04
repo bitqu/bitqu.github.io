@@ -1,6 +1,6 @@
-# CLAUDE.md
+# PROJECT_NOTES.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides maintenance notes for working with code in this repository.
 
 ## What this is
 
@@ -15,7 +15,7 @@ python3 -m http.server 8000
 # then open http://localhost:8000/
 ```
 
-Cache-bust edits to `assets/shared.css`, `assets/shared.js`, or `assets/swarm.js` by bumping the `?v=` query string in every HTML file's `<link>`/`<script>` tags (grep for `?v=`).
+Cache-bust edits to `assets/shared.css`, `assets/shared.js`, or `assets/topology.js` by bumping the `?v=` query string in every HTML file's `<link>`/`<script>` tags (grep for `?v=`).
 
 ## Architecture
 
@@ -23,11 +23,11 @@ Cache-bust edits to `assets/shared.css`, `assets/shared.js`, or `assets/swarm.js
 
 **Theme / accent / hero variant are runtime-switchable.** `assets/shared.js` persists settings (`theme`, `accent`, `hero`) in `localStorage` under key `bitqubic.settings.v1` and applies them as `data-theme` / `data-accent` / `data-hero` attributes on `<html>`. `assets/shared.css` drives all visual variation off those attributes via CSS custom properties — add a new accent or theme by extending the `[data-accent="…"]` / `[data-theme="…"]` blocks, not by writing new classes.
 
-**Hero variants live side-by-side in `index.html`.** Both `<header class="hero" data-variant="swarm">` and `data-variant="editorial">` are present; inline script hides all but the one matching `data-hero`. If you add a variant, add a matching `<header>` and extend `footLabels` / `runLabels` / `views` maps in the page-level `<script>`.
+**Hero variants live side-by-side in `index.html`.** Both `<header class="hero" data-variant="topology">` and `data-variant="editorial">` are present; inline script hides all but the one matching `data-hero`. If you add a variant, add a matching `<header>` and extend `footLabels` / `runLabels` / `views` maps in the page-level `<script>`.
 
 **`TWEAK_DEFAULTS` is a host-rewrite target.** The `/*EDITMODE-BEGIN*/…/*EDITMODE-END*/` markers in each page's `<head>` delimit a JSON object an external editor host rewrites in place; preserve the exact comment markers and the object shape when editing. The same file also implements a `postMessage` edit-mode protocol (`__activate_edit_mode` / `__deactivate_edit_mode` / `__edit_mode_available`) — don't remove those listeners.
 
-**Visualizations are canvas-based and self-initializing.** `assets/swarm.js` exposes `BQSwarm.init(canvas, opts)`; pages call it inside a `window.addEventListener('load', …)` block per canvas. Swarm uses a seeded RNG for deterministic-looking runs — keep the seed stable when editing so the visuals don't drift between reloads.
+**Visualizations are canvas-based and self-initializing.** `assets/topology.js` exposes `BQTopology.init(canvas, opts)`; pages call it inside a `window.addEventListener('load', …)` block per canvas. Topology uses a seeded RNG for deterministic-looking runs — keep the seed stable when editing so the visuals don't drift between reloads.
 
 ## Adding a new page
 

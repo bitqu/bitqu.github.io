@@ -1,6 +1,6 @@
 # bitqu.github.io
 
-Marketing site for **BitQubic** — distributed intelligence infrastructure for federated learning, carbon-aware orchestration, and agentic simulation. Published at [bitqu.github.io](https://bitqu.github.io) via GitHub Pages.
+Marketing site for **BitQubic** — cloud native infrastructure for platform engineering, cloud modernization, and Kubernetes orchestration. Published at [bitqu.github.io](https://bitqu.github.io) via GitHub Pages.
 
 ## Stack
 
@@ -18,10 +18,10 @@ Then open http://localhost:8000/.
 
 | Path | Purpose |
 | --- | --- |
-| `index.html`, `platform.html`, `simulations.html`, `federated.html`, `orchestration.html`, `contact.html` | Published pages |
+| `index.html`, `platform.html`, `platform-engineering.html`, `cloud-modernization.html`, `kubernetes-orchestration.html`, `contact.html` | Published pages |
 | `assets/shared.css` | Design tokens, theme/accent variants, component styles |
 | `assets/shared.js` | Nav, footer, ticker, and tweaks-panel injection; theme persistence |
-| `assets/swarm.js` | Canvas-based agent simulation visualization |
+| `assets/topology.js` | Canvas-based cloud topology visualization |
 
 ## Editing
 
@@ -29,7 +29,7 @@ Then open http://localhost:8000/.
 - **Theme, accent, hero variant** — driven by `data-theme` / `data-accent` / `data-hero` attributes on `<html>`, persisted in `localStorage` (`bitqubic.settings.v1`). Extend the corresponding blocks in `assets/shared.css` to add new variants.
 - **Asset cache busting** — bump the `?v=` query string on `<link>` / `<script>` tags in every HTML file after editing files in `assets/`.
 
-See [CLAUDE.md](CLAUDE.md) for deeper architectural notes.
+See [PROJECT_NOTES.md](PROJECT_NOTES.md) for deeper architectural notes.
 
 ## Deployment
 
